@@ -9,11 +9,11 @@ https://api.mercuryo.io/v1.5 -> https://api.mercuryo.io/v1.6
 
 # Обновленные ответы
 
-Основное изменение -- ответ дополнился информацией о комисси:
+Основное изменение &ndash; ответ дополнился информацией о комисси:
 1. `fee` &ndash; комиссии
-2. `subtotal` -- суммы без комиссии
-3. `total` -- итоговые суммы с комиссией
-4. `rate` -- курс криптовалюты на момент запроса
+2. `subtotal` &ndash; суммы без комиссии
+3. `total` &ndash; итоговые суммы с комиссией
+4. `rate` &ndash; курс криптовалюты на момент запроса
 
 # /widget/buy/rate
 Запрос:
@@ -49,7 +49,7 @@ https://api.mercuryo.io/v1.6/public/convert?from={fiat_currency}&to={crypto_curr
 https://api.mercuryo.io/v1.6/public/convert?from=EUR&to=BTC&type=buy&amount=100&widget_id=d9d9dab5-7127-417b-92fb-478bc90916b3
 
 Добавленные объекты в теле ответа
-1. `fee_currency` -- тип выбранного фиата
+1. `fee_currency` &ndash; тип выбранного фиата
 
 Пример:
 
