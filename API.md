@@ -12,7 +12,7 @@ https://api.mercuryo.io/v1.5 -> https://api.mercuryo.io/v1.6
 1. `fee` -- комиссии
 2. `subtotal` -- суммы без комиссии
 3. `total` -- итоговые суммы с комиссией
-4. 
+
 # /widget/buy/rate
 Запрос:
 
