@@ -23,7 +23,7 @@ https://api.mercuryo.io/v1.6/widget/buy/rate?from={fiat_currency}&to={crypto_cur
 
 Request example:
 
-https://github.com/IgnatBatuev/draft1.6api/blob/main/buy_comparev2.png
+https://api.mercuryo.io/v1.6/widget/sell/rate?from=BTC&to=USD&amount=0.003&widget_id=d9d9dab5-7127-417b-92fb-478bc90916b3
 
 Example:
 
@@ -48,6 +48,7 @@ Request:
 https://api.mercuryo.io/v1.6/public/convert?from={fiat_currency}&to={crypto_currency}&type={type}&amount={from_amount}&widget_id={widget_id}
 
 Request example:
+
 https://api.mercuryo.io/v1.6/public/convert?from=EUR&to=BTC&type=buy&amount=100&widget_id=d9d9dab5-7127-417b-92fb-478bc90916b3
 
 Added fields in response body
