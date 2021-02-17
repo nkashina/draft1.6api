@@ -6,12 +6,14 @@
 https://api.mercuryo.io/v1.5 -> https://api.mercuryo.io/v1.6
 
 Большинство ответов остается без изменений. Основное изменение -- ответ дополнился информацией о комисси:
+
+# Обновленные ответы
+
 1. `fee` -- комиссии
 2. `subtotal` -- суммы без комиссии
 3. `total` -- итоговые суммы с комиссией
-
-# Обновленные ответы
-# widget/buy/rate
+4. 
+# /widget/buy/rate
 Запрос:
 
 Пример запроса:
@@ -20,7 +22,7 @@ https://api.mercuryo.io/v1.6/widget/buy/rate?from=USD&to=BTC&amount=150&widget_i
 Пример:
 
 ![buy/rate](https://github.com/IgnatBatuev/draft1.6api/blob/main/widget_buy.png)
-# widget/sell/rate
+# /widget/sell/rate
 Запрос:
 
 Пример запрос:
@@ -30,7 +32,7 @@ https://api.mercuryo.io/v1.6/widget/sell/rate?from=BTC&to=USD&amount=0.003&widge
 Пример:
 
 ![buy/rate](https://github.com/IgnatBatuev/draft1.6api/blob/main/widget_sell.png)
-# public/convert
+# /public/convert
 Запрос:
 
 Пример запроса:
