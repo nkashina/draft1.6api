@@ -12,6 +12,7 @@ https://api.mercuryo.io/v1.6/widget/buy/rate?from=USD&to=BTC&amount=150&widget_i
 3. `total` - итоговая сумма с комиссией
 
 Пример:
+
 ![buy/rate](https://github.com/IgnatBatuev/draft1.6api/blob/main/widget_buy.png)
 # widget/sell/rate
 'https://api.mercuryo.io/v1.6/widget/sell/rate?from=BTC&to=USD&amount=0.003&widget_id=d9d9dab5-7127-417b-92fb-478bc90916b3'
@@ -21,6 +22,7 @@ https://api.mercuryo.io/v1.6/widget/buy/rate?from=USD&to=BTC&amount=150&widget_i
 3. `total` - итоговая сумма с комиссией
 
 Пример:
+
 ![buy/rate](sell/rate)
 # public/convert
 'https://api.mercuryo.io/v1.6/public/convert?from=EUR&to=BTC&type=buy&amount=100&widget_id=d9d9dab5-7127-417b-92fb-478bc90916b3'
@@ -30,4 +32,5 @@ https://api.mercuryo.io/v1.6/widget/buy/rate?from=USD&to=BTC&amount=150&widget_i
 3. `fee_currency` - тип выбранного фиата
 
 Пример:
-![buy/rate](https://github.com/IgnatBatuev/draft1.6api/blob/main/public_convert.png)
+
+![buy/rate](https://github.com/IgnatBatuev/draft1.6api/blob/main/widget_sell.png)
