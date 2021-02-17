@@ -16,26 +16,26 @@ https://api.mercuryo.io/v1.5 -> https://api.mercuryo.io/v1.6
 
 # /widget/buy/rate
 Запрос:
-
+https://api.mercuryo.io/v1.6/widget/buy/rate?from={fiat_currency}&to={crypto_currency}&amount={from_amount}&widget_id={widget_id}
 Пример запроса:
 https://api.mercuryo.io/v1.6/widget/buy/rate?from=USD&to=BTC&amount=150&widget_id=d9d9dab5-7127-417b-92fb-478bc90916b3
 
 Пример:
 
-![buy/rate](https://github.com/IgnatBatuev/draft1.6api/blob/main/widget_buy.png)
+![buy/rate](https://github.com/IgnatBatuev/draft1.6api/blob/main/buy_compare.png)
 # /widget/sell/rate
 Запрос:
-
+https://api.mercuryo.io/v1.6/widget/sell/rate?from={crypto_currency}&to={fiat_currency}&amount={from_amount}3&widget_id={widget_id}
 Пример запрос:
 https://api.mercuryo.io/v1.6/widget/sell/rate?from=BTC&to=USD&amount=0.003&widget_id=d9d9dab5-7127-417b-92fb-478bc90916b3
 
 
 Пример:
 
-![buy/rate](https://github.com/IgnatBatuev/draft1.6api/blob/main/widget_sell.png)
+![buy/rate](https://github.com/IgnatBatuev/draft1.6api/blob/main/sell_compare.png)
 # /public/convert
 Запрос:
-
+https://api.mercuryo.io/v1.6/public/convert?from={fiat_currency}&to={crypto_currency}&type={type}&amount={from_amount}&widget_id={widget_id}
 Пример запроса:
 https://api.mercuryo.io/v1.6/public/convert?from=EUR&to=BTC&type=buy&amount=100&widget_id=d9d9dab5-7127-417b-92fb-478bc90916b3
 
@@ -45,4 +45,4 @@ https://api.mercuryo.io/v1.6/public/convert?from=EUR&to=BTC&type=buy&amount=100&
 
 Пример:
 
-![buy/rate](https://github.com/IgnatBatuev/draft1.6api/blob/main/widget_sell.png)
+![buy/rate](https://github.com/IgnatBatuev/draft1.6api/blob/main/convert_compare.png)
