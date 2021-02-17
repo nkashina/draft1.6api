@@ -10,6 +10,7 @@ https://api.mercuryo.io/v1.5 -> https://api.mercuryo.io/v1.6/
 # Обновленные ответы
 # widget/buy/rate
 https://api.mercuryo.io/v1.6/widget/buy/rate?from=USD&to=BTC&amount=150&widget_id=d9d9dab5-7127-417b-92fb-478bc90916b3
+
 Добавленные поля в теле ответа:
 1. `fee` - комиссия
 2. `subtotal` - сумма без комиссии
@@ -19,7 +20,8 @@ https://api.mercuryo.io/v1.6/widget/buy/rate?from=USD&to=BTC&amount=150&widget_i
 
 ![buy/rate](https://github.com/IgnatBatuev/draft1.6api/blob/main/widget_buy.png)
 # widget/sell/rate
-'https://api.mercuryo.io/v1.6/widget/sell/rate?from=BTC&to=USD&amount=0.003&widget_id=d9d9dab5-7127-417b-92fb-478bc90916b3'
+https://api.mercuryo.io/v1.6/widget/sell/rate?from=BTC&to=USD&amount=0.003&widget_id=d9d9dab5-7127-417b-92fb-478bc90916b3
+
 Добавленные поля в теле ответа:
 1. `fee` - комиссия
 2. `subtotal` - сумма без комиссии
@@ -29,7 +31,8 @@ https://api.mercuryo.io/v1.6/widget/buy/rate?from=USD&to=BTC&amount=150&widget_i
 
 ![buy/rate](https://github.com/IgnatBatuev/draft1.6api/blob/main/widget_sell.png)
 # public/convert
-'https://api.mercuryo.io/v1.6/public/convert?from=EUR&to=BTC&type=buy&amount=100&widget_id=d9d9dab5-7127-417b-92fb-478bc90916b3'
+https://api.mercuryo.io/v1.6/public/convert?from=EUR&to=BTC&type=buy&amount=100&widget_id=d9d9dab5-7127-417b-92fb-478bc90916b3
+
 Добавленные поля в теле ответа
 1. `rate` - курс крипты в выбранном фиате
 2. `fee` - комиссия
