@@ -1,5 +1,5 @@
 # Switching to 1.6
-As part of optimization Mercuryo is switching to api version * 1.6 *. At the moment old version is supported. After the update the methods configured for the api * 1.5 * version will continue supported.
+As part of optimization Mercuryo is switching to api version **1.6**. At the moment old version is supported. After the update the methods configured for the api **1.5** version will continue supported.
 
 You need to change the version number from 1.5 to 1.6 to update:
 
