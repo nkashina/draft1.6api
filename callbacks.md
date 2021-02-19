@@ -5,15 +5,15 @@
 
 Buy:
 
-1. "top_up" 
-2. "withdrawal"
-3. "deposit"
+1. 'top_up' 
+2. 'withdrawal'
+3. 'deposit'
 
 Sell:
 
-1. "top_up "
-2. "withdrawal"
-3. "deposit "
+1. 'top_up'
+2. 'withdrawal'
+3. 'deposit'
 
 Каждый из типов проходит по схеме
 
@@ -32,7 +32,7 @@ partners.mercuryo.io
 ![menu](menu_img)
 
 # Widget Callbacks
-#2 Тестовый callback
+## Тестовый callback
 
 Для проверки обработки вебхука, можно отправить тестовый колбек.
 
@@ -44,7 +44,7 @@ partners.mercuryo.io
 
 ![test](test_img)
 
-# Таблица Callback Events
+## Таблица Callback Events
 
 ![table](table_img)
 
@@ -55,7 +55,7 @@ partners.mercuryo.io
 5. **Actions** - кнопка Actons открывает подробную информацию об конкретном ивенте
 
 # Расследование ошибки
-#2 Статус колбека
+## Статус колбека
 
 Упешно доставленные колбеки помечаются статусом **Success** и изображением зеленой галки перед ID колбека в колонке Id
 
@@ -67,7 +67,7 @@ partners.mercuryo.io
 
 Если в поле **Status** отображается **404** ошибка - значит не найден адрес куда следует отправить колбек
 
-#2 Причина ошибки
+## Причина ошибки
 
 Причина ошибки - сервис-слушатель некорректно обрабатывет поля в теле запроса.
 
