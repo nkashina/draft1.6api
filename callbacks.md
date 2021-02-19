@@ -11,9 +11,9 @@
 
 **Sell:**
 
-1. `top_up'
-2. `withdrawal'
-3. `deposit'
+1. `top_up`
+2. `withdrawal`
+3. `deposit`
 
 Каждый из типов проходит по схеме
 
