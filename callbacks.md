@@ -11,7 +11,7 @@
 
 **Sell:**
 
-1. `top_up`
+1. `pay_out`
 2. `withdrawal`
 3. `deposit`
 
