@@ -150,7 +150,7 @@ Per 1 transaction there are two internal operations "buy" and "withdraw"
 `completed` successfully (received transaction hash)
 
 ## SELL
-
+Deposit
 `new` transaction created
 
 `pending` transaction in progress
