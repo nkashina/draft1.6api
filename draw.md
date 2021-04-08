@@ -13,9 +13,13 @@ Widget is the most convenient way to integrate with Mercuryo. There are two ways
 ![img1](https://github.com/mercuryoio/api-migration-docs/blob/master/img1.png)
 
 **Dashboard** &ndash; plage with information abou transactions, also you can add widget by tap on <Add widget> button
+	
 **My widgets** &ndash; list of widgets
+
 **Widget callbacks** &ndash; list of callbacks. You can send test callback from this page
+
 **Reports** &ndash; log of Transactions, Referrals or Referrals Withdraw. You need to choose one of them to find the information
+
 # How to set up a widget
 My widgets → Create Partner Widget 
 
@@ -36,15 +40,15 @@ Domain &ndash; if Redirect https://domain.io, if iFrame your domain address (wit
 
 When the status of a transaction changes, the partner receives a request with transaction data from Mercuryo. 
 
-You can set-up a signature check and see the <X-Signature> HTTP header with a signature. 
+You can set-up a signature check and see the `X-Signature` HTTP header with a signature. 
 
-You can generate a key here, for example, https://implode.io/
+You can generate a key here, for [example](https://implode.io/)
 
-`$key = '...';
+` $key = '...';
 
 $json = '{...}';
 
-return hash_hmac('sha256', $json, $key)`
+return hash_hmac('sha256', $json, $key) `
 
 The signature can be checked by generating a hash through HMAC algorithm sha256 of the request body (JSON request) and a key that is in the partner's dashboard in the Sign Key field.
 
@@ -125,39 +129,53 @@ Per 1 transaction there are two internal operations "buy" and "withdraw"
 
 **Type: `buy`**
 
-`new` transaction initiated
+`new` &ndash; transaction initiated
 
-`pending` waiting for any action from the user to continue the transaction (waiting for input 3ds or descriptor)
+`pending` &ndash; waiting for any action from the user to continue the transaction (waiting for input 3ds or descriptor)
 
-`cancelled` transaction cancelled (usually due to timeout of descriptor or 3ds)
+`cancelled` &ndash; transaction cancelled (usually due to timeout of descriptor or 3ds)
 
-`paid` transaction completed successfully (money debited from the card)
+`paid` &ndash; transaction completed successfully (money debited from the card)
 
-`order_failed` transaction was rejected by the issuer bank 
+`order_failed` &ndash; transaction was rejected by the issuer bank 
 
-`order_scheduled` transaction is successful, the money is held up/frozen on the card by the bank, we are waiting for the client to pass KYC. As soon as the client passes KYC - crypto is sent to the address, if the client fails KYC - transaction is canceled within 1 hours, client’s bank returns money back to card.
+`order_scheduled` &ndash; transaction is successful, the money is held up/frozen on the card by the bank, we are waiting for the client to pass KYC. As soon as the client passes KYC - crypto is sent to the address, if the client fails KYC - transaction is canceled within 1 hours, client’s bank returns money back to card.
 
-`descriptor_failed` the user entered an invalid descriptor three times
+`descriptor_failed` &ndash; the user entered an invalid descriptor three times
 
 **Type: `withdraw`**
 
-`new` transaction initiated
+`new` &ndash; transaction initiated
 
-`pending` transaction in progress
+`pending` &ndash; transaction in progress
 
-`failed` not completed successfully (this is rare)
+`failed` &ndash; not completed successfully (this is rare)
 
-`completed` successfully (received transaction hash)
+`completed` &ndash; successfully (received transaction hash)
 
 ## SELL
-Deposit
-`new` transaction created
 
-`pending` transaction in progress
+Per 1 transaction there are two internal operations "deposit" and "sell"
 
-`succeeded` successfully completed (money transferred to the card)
+**Type:** `deposit`
 
-`failed` not completed successfully (crypto is refunded to refund_address)
+`new` &ndash; new deposit
+
+`pending` &ndash; deposit in progress
+
+`succeeded` &ndash; deposit is done
+
+`faild` &ndash; something gone wrong
+
+**Type:** `sell`
+
+`new` &ndash; transaction created
+
+`pending` &ndash; transaction in progress
+
+`succeeded` &ndash; successfully completed (money transferred to the card)
+
+`failed` &ndash; not completed successfully (crypto is refunded to `refund_address`)
 
 ## API METHODS 
 			
@@ -282,9 +300,9 @@ How to use parameters
 
 # SANDBOX 
 
-dashboard https://sandbox-partners.mrcr.io (if applicable)
+[Dashboard](https://sandbox-partners.mrcr.io) 
 
-redirect  https://sandbox-exchange.mrcr.io 
+Redirect to [Sandbox](https://sandbox-exchange.mrcr.io) 
 
 **iframe**
 
@@ -370,8 +388,8 @@ Request:
 [Example](https://sandbox-api.mrcr.io/v1.5/public/convert?from=EUR&to=BTC&type=buy&amount=100&widget_id=60b69ef8-9287-49d7-8164-94d87d8982c4)
 
 	
-# IV Check test transaction (if applicable)	
+# IV Check test transaction 	
 
-**BTC** &ndash; https://tbtc.bitaps.com/ (testnet)
+[**BTC**](https://tbtc.bitaps.com) testnet
 
-**ETH** &ndash; https://ropsten.etherscan.io/ (ropsten) (metamask) 
+[**ETH**](https://ropsten.etherscan.io) ropsten, metamask
