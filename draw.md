@@ -168,7 +168,7 @@ Per 1 transaction there are two internal operations "buy" and "withdraw"
 Request:
 `https://api.mercuryo.io/v1.6/public/rates`
 
-(Example)[https://api.mercuryo.io/v1.6/public/rates?widget_id=d9d9dab5-7127-417b-92fb-478bc90916b3]
+[Example](https://api.mercuryo.io/v1.6/public/rates?widget_id=d9d9dab5-7127-417b-92fb-478bc90916b3)
 
 
 **rate+mercuryo fee**
@@ -176,7 +176,7 @@ Request:
 Request:
 `https://api.mercuryo.io/v1.6/widget/rates/partner-fee-off`
 
-(Example)[https://api.mercuryo.io/v1.6/widget/rates/partner-fee-off?widget_id=d9d9dab5-7127-417b-92fb-478bc90916b3]
+[Example](https://api.mercuryo.io/v1.6/widget/rates/partner-fee-off?widget_id=d9d9dab5-7127-417b-92fb-478bc90916b3)
 
 
 **clear exchange rate**
@@ -192,7 +192,7 @@ Request:
 Request:
 `https://api.mercuryo.io/v1.6/widget/transactions`
 
-(Example)[https://api.mercuryo.io/v1.6/widget/transactions?widget_id=d9d9dab5-7127-417b-92fb-478bc90916b3&merchant_transaction_id=1234]
+[Example](https://api.mercuryo.io/v1.6/widget/transactions?widget_id=d9d9dab5-7127-417b-92fb-478bc90916b3&merchant_transaction_id=1234)
 
 
 **How to get final crypto *buy* or fiat *sell* amounts**
@@ -234,7 +234,7 @@ Request:
 Request:
 `https://api.mercuryo.io/v1.6/public/currency-limits`
 
-(Example)[https://api.mercuryo.io/v1.6/public/currency-limits?from=USD&to=BTC&widget_id=d9d9dab5-7127-417b-92fb-478bc90916b3&type=buy]
+[Example](https://api.mercuryo.io/v1.6/public/currency-limits?from=USD&to=BTC&widget_id=d9d9dab5-7127-417b-92fb-478bc90916b3&type=buy)
 
 
 2. **sell** 
@@ -242,7 +242,7 @@ Request:
 Request:
 `https://api.mercuryo.io/v1.6/public/currency-limits`
 
-(Example:)[https://api.mercuryo.io/v1.6/public/currency-limits?from=USD&to=BTC&widget_id=d9d9dab5-7127-417b-92fb-478bc90916b3&type=sell]	
+[Example:](https://api.mercuryo.io/v1.6/public/currency-limits?from=USD&to=BTC&widget_id=d9d9dab5-7127-417b-92fb-478bc90916b3&type=sell)	
 
 
 **How to get list of supported countries**
@@ -269,9 +269,7 @@ signature = sha512(address+secret), where + concatenation operation.
 
 If the signature is invalid, the widget will not be displayed.
 
-Signature generation example 
-
-https://abunchofutils.com/u/computing/sha512-hash-calculator
+Signature generation [example](https://abunchofutils.com/u/computing/sha512-hash-calculator)
 
 ![img4](https://github.com/mercuryoio/api-migration-docs/blob/master/img4.png)
 
@@ -279,8 +277,8 @@ https://abunchofutils.com/u/computing/sha512-hash-calculator
 
 How to use parameters
 
-1. (iframe)[https://demo-widget.mercuryo.io]
-2. (redirect)[https://widget.mercuryo.io/docs.html]		
+1. [iframe](https://demo-widget.mercuryo.io)
+2. [redirect](https://widget.mercuryo.io/docs.html)		
 
 # SANDBOX 
 
@@ -325,12 +323,12 @@ test erc-20 address &ndash; `0xA14691F9f1F851bd0c20115Ec10B25FC174371DF`
 				
 # II How to get testnet transaction status
 1. On the partner side, create a unique ID (max size 255 characters).
-2. Set the generated ID in in the URL `parameter merchant_transaction_id`. 
+2. Set the generated ID in in the URL parameter `merchant_transaction_id`. 
 3. Call API method
 					
 https://sandbox-api.mrcr.io/v1.5/widget/transactions?widget_id=60b69ef8-9287-49d7-8164-94d87d8982c4&merchant_transaction_id=1234
 				
-testnet widget_id &ndash; `60b69ef8-9287-49d7-8164-94d87d8982c4` 
+test `widget_id` example &ndash; `60b69ef8-9287-49d7-8164-94d87d8982c4` 
 
 `merchant_transaction_id` &ndash; generated unique id by partner that was created in the step 2
 
@@ -367,7 +365,7 @@ Request:
 
 Request:
 
-https://sandbox-api.mrcr.io/v1.5/public/convert
+`https://sandbox-api.mrcr.io/v1.5/public/convert`
 
 [Example](https://sandbox-api.mrcr.io/v1.5/public/convert?from=EUR&to=BTC&type=buy&amount=100&widget_id=60b69ef8-9287-49d7-8164-94d87d8982c4)
 
