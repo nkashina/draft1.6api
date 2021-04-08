@@ -168,15 +168,15 @@ Per 1 transaction there are two internal operations "buy" and "withdraw"
 Request:
 `https://api.mercuryo.io/v1.6/public/rates`
 
-[Example](https://api.mercuryo.io/v1.6/public/rates?widget_id=d9d9dab5-7127-417b-92fb-478bc90916b3) 
+(Example)[https://api.mercuryo.io/v1.6/public/rates?widget_id=d9d9dab5-7127-417b-92fb-478bc90916b3]
 
 
 **rate+mercuryo fee**
 
 Request:
-`https://api.mercuryo.io/v1.6/widget/rates/partner-fee-off
+`https://api.mercuryo.io/v1.6/widget/rates/partner-fee-off`
 
-[Example](https://api.mercuryo.io/v1.6/widget/rates/partner-fee-off?widget_id=d9d9dab5-7127-417b-92fb-478bc90916b3)
+(Example)[https://api.mercuryo.io/v1.6/widget/rates/partner-fee-off?widget_id=d9d9dab5-7127-417b-92fb-478bc90916b3]
 
 
 **clear exchange rate**
@@ -184,7 +184,7 @@ Request:
 Request:
 `https://api.mercuryo.io/v1.6/widget/rates/fee-off`
 
-(Example)[https://api.mercuryo.io/v1.6/widget/rates/fee-off?widget_id=d9d9dab5-7127-417b-92fb-478bc90916b3]
+[Example](https://api.mercuryo.io/v1.6/widget/rates/fee-off?widget_id=d9d9dab5-7127-417b-92fb-478bc90916b3)
 
 
 **How to get transaction status**
@@ -192,7 +192,7 @@ Request:
 Request:
 `https://api.mercuryo.io/v1.6/widget/transactions`
 
-[Example](https://api.mercuryo.io/v1.6/widget/transactions?widget_id=d9d9dab5-7127-417b-92fb-478bc90916b3&merchant_transaction_id=1234)
+(Example)[https://api.mercuryo.io/v1.6/widget/transactions?widget_id=d9d9dab5-7127-417b-92fb-478bc90916b3&merchant_transaction_id=1234]
 
 
 **How to get final crypto *buy* or fiat *sell* amounts**
@@ -202,7 +202,7 @@ Request:
 Request:
 `https://api.mercuryo.io/v1.6/public/convert`
 
-(Example)[https://api.mercuryo.io/v1.6/public/convert?from=EUR&to=BTC&type=buy&amount=100&widget_id=d9d9dab5-7127-417b-92fb-478bc90916b3] 
+[Example](https://api.mercuryo.io/v1.6/public/convert?from=EUR&to=BTC&type=buy&amount=100&widget_id=d9d9dab5-7127-417b-92fb-478bc90916b3)
 
 
 2. **sell**
@@ -210,7 +210,7 @@ Request:
 Request:
 `https://api.mercuryo.io/v1.6/public/convert`
 
-(Example)[https://api.mercuryo.io/v1.6/public/convert?from=BTC&to=EUR&type=sell&amount=0.1&widget_id=d9d9dab5-7127-417b-92fb-478bc90916b3]
+[Example](https://api.mercuryo.io/v1.6/public/convert?from=BTC&to=EUR&type=sell&amount=0.1&widget_id=d9d9dab5-7127-417b-92fb-478bc90916b3)
 
 
 3.
