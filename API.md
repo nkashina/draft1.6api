@@ -101,6 +101,5 @@ https://api.mercuryo.io/v1.6/public/convert?from=EUR&to=BTC&type=buy&amount=100&
 "id":"mercuryo_id",
 
 "merchant_transaction_id":"merchant_transaction_id"
-
 `
 
