@@ -56,18 +56,12 @@ https://api.mercuryo.io/v1.6/public/convert?from=EUR&to=BTC&type=buy&amount=100&
 ![public/convert](https://github.com/IgnatBatuev/draft1.6api/blob/main/conver_comparev3.png)
 
 
-| Parameter name  | Type  | 
+| Status  | Meaning  | 
 | ------------- | -------------  |
-| `id` | &ndash; unique ID of the current event |
-| `uuid4` | &ndash; unique user ID |
-| `country_code` | &ndash; - code of users country |
-| `number` | &ndash; last 4 numbers of card number |
-| `amount` | &ndash; crypro amount |
-| `status` | &ndash; transaction status |
-| `currency` | &ndash; crypto currency |
-| `created_at` and `updated_at` | &ndash; data of start and last update |
-|`fiat_currency` | &ndash; fiat currency |
-| `created_at_ts` | &ndash; timestamp of creation |
-| `fiat_currency` | &ndash; code of fiat currency |
-| `updated_at_ts` | &ndash; timestamp of last update |
-| `merchant_transaction_id` | &ndash; merchant id |
+| `new` | transaction initiated |
+| `pending` | waiting for any action from the user to continue the transaction (waiting for input 3ds or descriptor) |
+| `cancelled` | transaction cancelled (usually due to timeout of descriptor or 3ds) |
+| `paid` | transaction completed successfully (money debited from the card) |
+| `order_failed` | transaction was rejected by the issuer bank |
+| `order_scheduled` | transaction is successful, the money is held up/frozen on the card by the bank, we are waiting for the client to pass KYC. As soon as the client passes KYC - crypto is sent to the address, if the client fails KYC - transaction is canceled within 1 hours, client’s bank returns money back to card.|
+|`descriptor_failed` | the user entered an invalid descriptor three times |
