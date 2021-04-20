@@ -81,8 +81,9 @@ https://api.mercuryo.io/v1.6/public/convert?from=EUR&to=BTC&type=buy&amount=100&
             "merchant_transaction_id": "9076"
 ```
 
-```js 
-
+```js scrypt
+import `https://api.mercuryo.io/v1.6/widget/transactions?widget_id=d9d9dab5-7127-417b-92fb-478bc90916b3&merchant_transaction_id=1234.js`;"
+```
 "data": {
 "tx": {
 "id": "blockchain_transaction_id",
