@@ -8,7 +8,7 @@ Widget is the most convenient way to integrate with Mercuryo. There are two ways
  
    1.2. [Step 2. Get a dashboard](//draw.md#12-step-2-.--get-a-dashboard)
  
-   1.3. [Step 3. Set up a widget](//draw.md#13-step-3-.--set-up-a-widget)
+   1.3. [Step 3. Set up a widget](//draw.md#13-step-3-.-set-up-a-widget)
  
    1.4. [Step 4. Check signature wallet address](//draw.md#14-step-4-.-check-signature-wallet-address)
 2. [Webhooks](/draw.md#2-webhooks)
@@ -27,9 +27,7 @@ Widget is the most convenient way to integrate with Mercuryo. There are two ways
  
    6.3. [Get rates, limits etc](//draw.md#63-get-rates-limits-etc)
 
-        6.31
-
-      
+       
 
    6.4. [Check test transaction ](//draw.md#64-check-test-transaction)
 	
@@ -41,7 +39,7 @@ Widget is the most convenient way to integrate with Mercuryo. There are two ways
 
 1. For integrate Mercuryo to your own platform use [**iframe**](https://demo-widget.mercuryo.io)
 
-2. For rediraction to Mercuryo platform use  [**redirect**](https://widget.mercuryo.io/docs.html). In this case partner get the comissions as with iframe.
+2. For redirection to Mercuryo platform use  [**redirect**](https://widget.mercuryo.io/docs.html). In this case partner get the comissions as with iframe.
 
 #### 1.2. Step 2. Get a dashboard	
 [Partners admin](https://partners.mercuryo.io)  
@@ -50,7 +48,7 @@ Widget is the most convenient way to integrate with Mercuryo. There are two ways
 
 | Section  | Description  | 
 | ------------- | -------------  |
-| Dashboard | plage with information abou transactions, also you can add widget by tap on <Add widget> button |
+| Dashboard | page with information abou transactions, also you can add widget by tap on <Add widget> button |
 | My widgets | list of widgets |
 | Widget callbacks | list of callbacks. You can send test callback from this page |
 | Reports | log of Transactions, Referrals or Referrals Withdraw. You need to choose one of them to find the information|
@@ -60,13 +58,10 @@ Widget is the most convenient way to integrate with Mercuryo. There are two ways
 
 ![img2](https://github.com/mercuryoio/api-migration-docs/blob/master/img2.png)
 
-Domain &ndash; if Redirect `https://domain.io`, if iFrame your domain address (without “/” at the end of the address)
+**Domain** &ndash; if Redirect `https://domain.io`, if iFrame your domain address (without “/” at the end of the address)
 (1 widget = 1 domain)
-
 **Note:** Please make sure, there are no symbols or backspace after `https://domain.io` if you choose Redirect or after `https://yourdomain.com` if you choose iFrame, otherwise the widget will not work properly and you’ll see `widget.mercuryo.io refused to connect` message.
-
 **Backward URL** &ndash; merchant URL to which the users will return from Redirect
-
 **Callback URL** &ndash; merchant server URL which listens to callbacks automatically when Mercuryo’s updates status of a transaction. 
  
 #### 1.4. Step 4. Check signature wallet address
@@ -103,13 +98,36 @@ These webhooks allow you to get current transaction status and include all the d
 
 `widget_id` &ndash; partners widget ID
 
-`merchant_transaction_id` &ndash; generated unique ID by a partner, that was created in step 2		
+`merchant_transaction_id` &ndash; generated unique ID by a partner, that was created in step 2	
 
-**Callbacks Response Body:**
+#### 2.1. Callbacks signature check
+
+**Sign Key** &ndash; Callbacks signature check
+
+When the status of a transaction changes, the partner receives a request with transaction data from Mercuryo. 
+
+You can set-up a signature check and see the `X-Signature` HTTP header with a signature. 
+
+You can generate a key here, for [example](https://implode.io/)
+
+``` 
+$key = '...';
+
+$json = '{...}';
+
+return hash_hmac('sha256', $json, $key) 
+```
+
+The signature can be checked by generating a hash through HMAC algorithm sha256 of the request body (JSON request) and a key that is in the partner's dashboard in the Sign Key field.
+
+In this case, the request body must not change.
+		
+
+#### 2.2. Callbacks Response Body
   
  Callbacks Payload example:
  
-       ```js
+       ```JS
        {
     "payload": {
         "data": {
@@ -206,9 +224,9 @@ Per 1 transaction there are two internal operations "deposit" and "sell"
 
 ### 4. API METHODS 
 			
-**Get rates.**
+#### 4.1. Get rates.
 
-**rate+mercuryo fees+partners fee**
+##### 4.1.1 rate+mercuryo fees+partners fee
 
 Request:
 `https://api.mercuryo.io/v1.6/public/rates`
@@ -216,7 +234,7 @@ Request:
 [Example](https://api.mercuryo.io/v1.6/public/rates?widget_id=d9d9dab5-7127-417b-92fb-478bc90916b3)
 
 
-**rate+mercuryo fee**
+##### 4.1.2 rate+mercuryo fee
 
 Request:
 `https://api.mercuryo.io/v1.6/widget/rates/partner-fee-off`
@@ -224,7 +242,7 @@ Request:
 [Example](https://api.mercuryo.io/v1.6/widget/rates/partner-fee-off?widget_id=d9d9dab5-7127-417b-92fb-478bc90916b3)
 
 
-**clear exchange rate**
+##### 4.1.3clear exchange rate**
 
 Request:
 `https://api.mercuryo.io/v1.6/widget/rates/fee-off`
@@ -323,24 +341,25 @@ Signature generation [example](https://abunchofutils.com/u/computing/sha512-hash
 
 ### 6. TEST
 
-You should provide all your test personal/server ip’s for whitelist to use Mercuryo’s sandbox
+You should provide all your test personal/server ip’s for whitelist to use Mercuryo’s sandbox. Contact your Mercuryo manager for it
 
 How to use parameters
 
 1. [iframe](https://demo-widget.mercuryo.io)
 2. [redirect](https://widget.mercuryo.io/docs.html)		
 
-#### 6.1. SANDBOX 
+#### 6.1. Mercuryo SANDBOX 
 
 [Dashboard](https://sandbox-partners.mrcr.io) 
 
-Redirect to [Sandbox](https://sandbox-exchange.mrcr.io) 
+**Redirect**
+ You can open widgetto [Sandbox](https://sandbox-exchange.mrcr.io) 
 
 **iframe**
 
 1. Place `<div id="mercuryo-widget"></div>` inside `<body></body>`
  
-2. Put 
+2. Put to widget HTML
 ```
 <script src="https://sandbox-widget.mrcr.io/embed.2.0.js"></script>
 
@@ -372,58 +391,8 @@ test BTC address &ndash; `msBE6aCaAesegu4VzbQW3L5xWBL8vi15Q7`
 
 test erc-20 address &ndash; `0xA14691F9f1F851bd0c20115Ec10B25FC174371DF`
 				
-#### 6.2. Get testnet transaction status
-1. On the partner side, create a unique ID (max size 255 characters).
-2. Set the generated ID in in the URL parameter `merchant_transaction_id`. 
-3. Call API method
-Request:
-`https://sandbox-api.mrcr.io/v1.5/widget/transactions?widget_id=your-widget-id&merchant_transaction_id=your-transaction-id`
-				
-test `widget_id` example &ndash; `60b69ef8-9287-49d7-8164-94d87d8982c4` 
 
-`merchant_transaction_id` &ndash; generated unique id by partner that was created in the step 2
-
-#### 6.3. Get rates, limits etc
-
-
-##### 6.3.1. Rates
-
-[Rates](https://sandbox-api.mrcr.io/v1.5/public/rates?widget_id=60b69ef8-9287-49d7-8164-94d87d8982c4)
-
-
-##### 6.3.2. Get the list of supported fiat/cryptocurrencies**	
-
-[Buy](https://sandbox-api.mrcr.io/v1.5/public/currencies-buy)
-
-[Sell](https://sandbox-api.mrcr.io/v1.5/public/currencies-sell)		
-
-
-##### 6.3.3. Get min/max limits	
-
-Request:
-
-`https://sandbox-api.mrcr.io/v1.5/public/currency-limits`
-
-[Example](https://sandbox-api.mrcr.io/v1.5/public/currency-limits?from=USD&to=BTC&widget_id=60b69ef8-9287-49d7-8164-94d87d8982c4)
-					
-##### 6.3.4. Get list of supported countries
-
-Request:
-
-`https://sandbox-api.mrcr.io/v1.5/public/card-countries` 
-
-[Example]()
-
-##### 6.3.5. Get final crypto amount
-
-Request:
-
-`https://sandbox-api.mrcr.io/v1.5/public/convert`
-
-[Example](https://sandbox-api.mrcr.io/v1.5/public/convert?from=EUR&to=BTC&type=buy&amount=100&widget_id=60b69ef8-9287-49d7-8164-94d87d8982c4)
-
-	
-#### 6.4. Check test transaction 	
+#### 6.2. Check test transaction 	
 
 [**BTC**](https://tbtc.bitaps.com) testnet
 
