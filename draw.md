@@ -29,7 +29,8 @@ Widget is the most convenient way to integrate with Mercuryo. There are two ways
 
    6.4. [Check test transaction ](//draw.md#64-check-test-transaction)
 	
-	
+***
+
 #### 1. How to start
 
 #### 1.1. Step 1. Get parameters
