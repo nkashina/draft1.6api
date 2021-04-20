@@ -372,8 +372,8 @@ test erc-20 address &ndash; `0xA14691F9f1F851bd0c20115Ec10B25FC174371DF`
 1. On the partner side, create a unique ID (max size 255 characters).
 2. Set the generated ID in in the URL parameter `merchant_transaction_id`. 
 3. Call API method
-					
-https://sandbox-api.mrcr.io/v1.5/widget/transactions?widget_id=60b69ef8-9287-49d7-8164-94d87d8982c4&merchant_transaction_id=1234
+Request:
+`https://sandbox-api.mrcr.io/v1.5/widget/transactions?widget_id=your-widget-id&merchant_transaction_id=your-transaction-id`
 				
 test `widget_id` example &ndash; `60b69ef8-9287-49d7-8164-94d87d8982c4` 
 
