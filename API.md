@@ -84,7 +84,6 @@ export const
 ```
 
 ```js script
-{
 "data": {
 "tx": {
 "id": "blockchain_transaction_id",
@@ -106,7 +105,6 @@ export const
 "updated_at_ts": 1615320320,
 "id":"mercuryo_id",
 "merchant_transaction_id":"merchant_transaction_id"
-}';
 ```
 
 ```js story
