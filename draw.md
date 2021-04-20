@@ -2,32 +2,32 @@
 Widget is the most convenient way to integrate with Mercuryo. There are two ways to integrate - redirect and iframe
 [FAQ](https://help.mercuryo.io/en/articles/4519473-mercuryo-widget-faq)
 
-1.[How to start](/draw.md#1-how-to-start)
+1. [How to start](/draw.md#1-how-to-start)
 
- 1.1. [Step 1. Get parameters](//draw.md#11-step-1-.-get-parameters)
+   1.1. [Step 1. Get parameters](//draw.md#11-step-1-.-get-parameters)
  
- 1.2. [Step 2. Get a dashboard](//draw.md#12-step-2-.--get-a-dashboard)
+   1.2. [Step 2. Get a dashboard](//draw.md#12-step-2-.--get-a-dashboard)
  
- 1.3. [Step 3. Set up a widget](//draw.md#13-step-3-.--set-up-a-widget)
+   1.3. [Step 3. Set up a widget](//draw.md#13-step-3-.--set-up-a-widget)
  
- 1.4. [Step 4. Check signature wallet address](//draw.md#14-step-4-.-check-signature-wallet-address)
+   1.4. [Step 4. Check signature wallet address](//draw.md#14-step-4-.-check-signature-wallet-address)
 2. [Webhooks](/draw.md#2-webhooks)
 3. [Transaction status types ](/draw.md#3-transaction-status-types)
 
- 3.1[buy](//draw.md#31-buy)
+   3.1[buy](//draw.md#31-buy)
 
- 3.2[sell](//draw.md#32-sell)
+   3.2[sell](//draw.md#32-sell)
 4. [API METHODS](/draw.md#4-api-methods)
 5. [Signature Wallet Address](/draw.md#5-signature-wallet-address)
 6. [Test](/draw.md#6-test)
 
- 6.1. [SANDBOX](//draw.md#61-sandbox)
+   6.1. [SANDBOX](//draw.md#61-sandbox)
 
- 6.2. [Get testnet transaction status](//62-get-testnet-transaction-status)
+   6.2. [Get testnet transaction status](//62-get-testnet-transaction-status)
  
- 6.3. [Get rates, limits etc](//draw.md#63-get-rates-limits-etc)
+   6.3. [Get rates, limits etc](//draw.md#63-get-rates-limits-etc)
 
- 6.4. [Check test transaction ](//draw.md#64-check-test-transaction)
+   6.4. [Check test transaction ](//draw.md#64-check-test-transaction)
 	
 	
 #### 1. How to start
@@ -287,6 +287,7 @@ Request:
 
 `https://api.mercuryo.io/v1.6/public/card-countries` 
 
+***
 
 ### 5. Signature Wallet Address
 
@@ -310,6 +311,8 @@ If the signature is invalid, the widget will not be displayed.
 Signature generation [example](https://abunchofutils.com/u/computing/sha512-hash-calculator)
 
 ![img4](https://github.com/mercuryoio/api-migration-docs/blob/master/img4.png)
+
+***
 
 ### 6. TEST
 
