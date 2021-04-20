@@ -60,7 +60,7 @@ https://api.mercuryo.io/v1.6/public/convert?from=EUR&to=BTC&type=buy&amount=100&
 import './my-component.js';
 ```
 
-```js script
+```js story
 '
 "data": {
 "tx": {
