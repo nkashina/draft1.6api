@@ -56,9 +56,9 @@ https://api.mercuryo.io/v1.6/public/convert?from=EUR&to=BTC&type=buy&amount=100&
 ![public/convert](https://github.com/IgnatBatuev/draft1.6api/blob/main/conver_comparev3.png)
 
 
-
-```
-import '"data": {
+```js script
+import '
+'"data": {
 "tx": {
 "id": "blockchain_transaction_id",
 "address": "blockchain_address"
@@ -79,5 +79,5 @@ import '"data": {
 "updated_at_ts": 1615320320,
 "id":"mercuryo_id",
 "merchant_transaction_id":"merchant_transaction_id"
-}.js';
+}';
 ```
