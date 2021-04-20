@@ -84,7 +84,7 @@ export const
 ```
 
 ```js script
-import './{
+{
 "data": {
 "tx": {
 "id": "blockchain_transaction_id",
@@ -106,7 +106,7 @@ import './{
 "updated_at_ts": 1615320320,
 "id":"mercuryo_id",
 "merchant_transaction_id":"merchant_transaction_id"
-}.js';
+}';
 ```
 
 ```js story
