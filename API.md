@@ -54,3 +54,30 @@ https://api.mercuryo.io/v1.6/public/convert?from=EUR&to=BTC&type=buy&amount=100&
 Пример:
 
 ![public/convert](https://github.com/IgnatBatuev/draft1.6api/blob/main/conver_comparev3.png)
+
+
+
+```js script
+import '"data": {
+"tx": {
+"id": "blockchain_transaction_id",
+"address": "blockchain_address"
+},
+"type": "withdraw",
+"user":{
+"uuid4":"mercuryo_user_uuid4,
+"country_code":"nz"
+},
+"amount": "0.02833",
+"status": "pending",
+"currency": "ETH",
+"created_at": "2021-03-09 20:05:20",
+"updated_at": "2021-03-09 20:05:20",
+"fiat_amount": "47.86",
+"created_at_ts": 1615320320,
+"fiat_currency": "USD",
+"updated_at_ts": 1615320320,
+"id":"mercuryo_id",
+"merchant_transaction_id":"merchant_transaction_id"
+}.js';
+```
