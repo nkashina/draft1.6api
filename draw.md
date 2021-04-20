@@ -2,16 +2,15 @@
 Widget is the most convenient way to integrate with Mercuryo. There are two ways to integrate - redirect and iframe
 [FAQ](https://help.mercuryo.io/en/articles/4519473-mercuryo-widget-faq)
 
-1. [How to start](/draw.md#1-how-to-start)
+1.[How to start](/draw.md#1-how-to-start)
 
  1.1. [Step 1. Get parameters](//draw.md#11-step-1-.-get-parameters)
-
+ 
  1.2. [Step 2. Get a dashboard](//draw.md#12-step-2-.--get-a-dashboard)
-
+ 
  1.3. [Step 3. Set up a widget](//draw.md#13-step-3-.--set-up-a-widget)
-
+ 
  1.4. [Step 4. Check signature wallet address](//draw.md#14-step-4-.-check-signature-wallet-address)
-
 2. [Webhooks](/draw.md#2-webhooks)
 3. [Transaction status types ](/draw.md#3-transaction-status-types)
 
