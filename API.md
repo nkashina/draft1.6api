@@ -83,7 +83,7 @@ export const
 } `;
 ```
 
-```js script
+```js
 "data": {
 "tx": {
 "id": "blockchain_transaction_id",
