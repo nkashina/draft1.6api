@@ -14,9 +14,9 @@ Widget is the most convenient way to integrate with Mercuryo. There are two ways
 2. [Webhooks](/draw.md#2-webhooks)
 3. [Transaction status types ](/draw.md#3-transaction-status-types)
 
-   3.1[buy](//draw.md#31-buy)
+   3.1 [buy](//draw.md#31-buy)
 
-   3.2[sell](//draw.md#32-sell)
+   3.2 [sell](//draw.md#32-sell)
 4. [API METHODS](/draw.md#4-api-methods)
 5. [Signature Wallet Address](/draw.md#5-signature-wallet-address)
 6. [Test](/draw.md#6-test)
@@ -26,6 +26,10 @@ Widget is the most convenient way to integrate with Mercuryo. There are two ways
    6.2. [Get testnet transaction status](//62-get-testnet-transaction-status)
  
    6.3. [Get rates, limits etc](//draw.md#63-get-rates-limits-etc)
+
+        6.31
+
+      
 
    6.4. [Check test transaction ](//draw.md#64-check-test-transaction)
 	
@@ -382,17 +386,19 @@ test `widget_id` example &ndash; `60b69ef8-9287-49d7-8164-94d87d8982c4`
 #### 6.3. Get rates, limits etc
 
 
-[**Rates**](https://sandbox-api.mrcr.io/v1.5/public/rates?widget_id=60b69ef8-9287-49d7-8164-94d87d8982c4)
+##### 6.3.1. Rates
+
+[Rates](https://sandbox-api.mrcr.io/v1.5/public/rates?widget_id=60b69ef8-9287-49d7-8164-94d87d8982c4)
 
 
-**Get the list of supported fiat/cryptocurrencies**	
+##### 6.3.2. Get the list of supported fiat/cryptocurrencies**	
 
 [Buy](https://sandbox-api.mrcr.io/v1.5/public/currencies-buy)
 
 [Sell](https://sandbox-api.mrcr.io/v1.5/public/currencies-sell)		
 
 
-**Get min/max limits**	
+##### 6.3.3. Get min/max limits	
 
 Request:
 
@@ -400,7 +406,7 @@ Request:
 
 [Example](https://sandbox-api.mrcr.io/v1.5/public/currency-limits?from=USD&to=BTC&widget_id=60b69ef8-9287-49d7-8164-94d87d8982c4)
 					
-**Get list of supported countries**
+##### 6.3.4. Get list of supported countries
 
 Request:
 
@@ -408,7 +414,7 @@ Request:
 
 [Example]()
 
-**Get final crypto amount**
+##### 6.3.5. Get final crypto amount
 
 Request:
 
