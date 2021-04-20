@@ -56,7 +56,11 @@ https://api.mercuryo.io/v1.6/public/convert?from=EUR&to=BTC&type=buy&amount=100&
 ![public/convert](https://github.com/IgnatBatuev/draft1.6api/blob/main/conver_comparev3.png)
 
 
-
+```js
+var add2 = function(number) {
+  return number + 2;
+}
+```
 
 ```js 
 
