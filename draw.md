@@ -52,11 +52,11 @@ Widget is the most convenient way to integrate with Mercuryo. There are two ways
 | Reports | log of Transactions, Referrals or Referrals Withdraw. You need to choose one of them to find the information|
 
 #### 1.3 Step 3. Set up a widget
-My widgets → Create Partner Widget 
+**My widgets → Create Partner Widget**
 
 ![img2](https://github.com/mercuryoio/api-migration-docs/blob/master/img2.png)
 
-Domain &ndash; if Redirect https://domain.io, if iFrame your domain address (without “/” at the end of the address)
+Domain &ndash; if Redirect `https://domain.io`, if iFrame your domain address (without “/” at the end of the address)
 (1 widget = 1 domain)
 
 **Note:** Please make sure, there are no symbols or backspace after `https://domain.io` if you choose Redirect or after `https://yourdomain.com` if you choose iFrame, otherwise the widget will not work properly and you’ll see `widget.mercuryo.io refused to connect` message.
@@ -75,11 +75,13 @@ You can set-up a signature check and see the `X-Signature` HTTP header with a si
 
 You can generate a key here, for [example](https://implode.io/)
 
-` $key = '...';
+``` 
+$key = '...';
 
 $json = '{...}';
 
-return hash_hmac('sha256', $json, $key) `
+return hash_hmac('sha256', $json, $key) 
+```
 
 The signature can be checked by generating a hash through HMAC algorithm sha256 of the request body (JSON request) and a key that is in the partner's dashboard in the Sign Key field.
 
