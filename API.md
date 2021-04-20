@@ -69,16 +69,6 @@ https://api.mercuryo.io/v1.6/public/convert?from=EUR&to=BTC&type=buy&amount=100&
                 "uuid4": "938252dc-5640-4a29-a4c3-14ce2e0bafda",
                 "country_code": "ru"
             },
-            "amount": "0.092835600305367199",
-            "status": "order_scheduled",
-            "currency": "ETH",
-            "created_at": "2021-04-08 07:40:13",
-            "updated_at": "2021-04-08 07:40:15",
-            "fiat_amount": "15000.00",
-            "created_at_ts": 1617867613,
-            "fiat_currency": "RUB",
-            "updated_at_ts": 1617867615,
-            "merchant_transaction_id": "9076"
 ```
 
 ```js scrypt
