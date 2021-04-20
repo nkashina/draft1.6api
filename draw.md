@@ -2,25 +2,56 @@
 Widget is the most convenient way to integrate with Mercuryo. There are two ways to integrate - redirect and iframe
 [FAQ](https://help.mercuryo.io/en/articles/4519473-mercuryo-widget-faq)
 
-# How to use parameters
+1. [How to start](/draw.md#1-how-to-start)
+
+ 1.1. [Step 1. Get parameters](//draw.md#11-step-1-.-get-parameters)
+
+ 1.2. [Step 2. Get a dashboard](//draw.md#12-step-2-.--get-a-dashboard)
+
+ 1.3. [Step 3. Set up a widget](//draw.md#13-step-3-.--set-up-a-widget)
+
+ 1.4. [Step 4. Check signature wallet address](//draw.md#14-step-4-.-check-signature-wallet-address)
+
+2. [Webhooks](/draw.md#2-webhooks)
+3. [Transaction status types ](/draw.md#3-transaction-status-types)
+
+ 3.1[buy](//draw.md#31-buy)
+
+ 3.2[sell](//draw.md#32-sell)
+4. [API METHODS](/draw.md#4-api-methods)
+5. [Signature Wallet Address](/draw.md#5-signature-wallet-address)
+6. [Test](/draw.md#6-test)
+
+ 6.1. [SANDBOX](//draw.md#61-sandbox)
+
+ 6.2. [Get testnet transaction status](//62-get-testnet-transaction-status)
+ 
+ 6.3. [Get rates, limits etc](//draw.md#63-get-rates-limits-etc)
+
+ 6.4. [Check test transaction ](//draw.md#64-check-test-transaction)
+	
+	
+#### 1. How to start
+
+#### 1.1. Step 1. Get parameters
+
 1. For integrate Mercuryo to your own platform use [**iframe**](https://demo-widget.mercuryo.io)
 
 2. For rediraction to Mercuryo platform use  [**redirect**](https://widget.mercuryo.io/docs.html). In this case partner get the comissions as with iframe.
 
-# How to get a dashboard	
+#### 1.2. Step 2. Get a dashboard	
 [Partners admin](https://partners.mercuryo.io)  
 
 ![img1](https://github.com/mercuryoio/api-migration-docs/blob/master/img1.png)
 
-**Dashboard** &ndash; plage with information abou transactions, also you can add widget by tap on <Add widget> button
-	
-**My widgets** &ndash; list of widgets
+| Section  | Description  | 
+| ------------- | -------------  |
+| Dashboard | plage with information abou transactions, also you can add widget by tap on <Add widget> button |
+| My widgets | list of widgets |
+| Widget callbacks | list of callbacks. You can send test callback from this page |
+| Reports | log of Transactions, Referrals or Referrals Withdraw. You need to choose one of them to find the information|
 
-**Widget callbacks** &ndash; list of callbacks. You can send test callback from this page
-
-**Reports** &ndash; log of Transactions, Referrals or Referrals Withdraw. You need to choose one of them to find the information
-
-# How to set up a widget
+#### 1.3 Step 3. Set up a widget
 My widgets → Create Partner Widget 
 
 ![img2](https://github.com/mercuryoio/api-migration-docs/blob/master/img2.png)
@@ -34,7 +65,7 @@ Domain &ndash; if Redirect https://domain.io, if iFrame your domain address (wit
 
 **Callback URL** &ndash; merchant server URL which listens to callbacks automatically when Mercuryo’s updates status of a transaction. 
  
-# Check signature &ndash; signature wallet address
+#### 1.4. Step 4. Check signature wallet address
 
 **Sign Key** &ndash; Callbacks signature check
 
@@ -54,7 +85,9 @@ The signature can be checked by generating a hash through HMAC algorithm sha256 
 
 In this case, the request body must not change.
 
-# Webhooks	
+***
+
+### 2. Webhooks	
 
 These webhooks allow you to get current transaction status and include all the data.
 
@@ -70,116 +103,104 @@ These webhooks allow you to get current transaction status and include all the d
   
  Callbacks Payload example:
  
-       `{
-    "url": "https:\/\/webhook.site\/75f6bdf4-3b4c-463c-8a81-918523f765aa",
+       ```js
+       {
     "payload": {
         "data": {
-            "id": "06292dddc67051001",
-            "card": {
-                "number": "6447"
-            },
-            "type": "buy",
-            "user": {
-                "uuid4": "938252dc-5640-4a29-a4c3-14ce2e0bafda",
-                "country_code": "ru"
-            },
-            "amount": "0.092835600305367199",
-            "status": "order_scheduled",
-            "currency": "ETH",
-            "created_at": "2021-04-08 07:40:13",
-            "updated_at": "2021-04-08 07:40:15",
-            "fiat_amount": "15000.00",
-            "created_at_ts": 1617867613,
-            "fiat_currency": "RUB",
-            "updated_at_ts": 1617867615,
-            "merchant_transaction_id": "9076"
-        }`
+	"tx": {
+	"id": "blockchain_transaction_id",
+	"address": "blockchain_address"
+	},
+	"type": "withdraw",
+	"user":{
+	"uuid4":"mercuryo_user_uuid4,
+	"country_code":"nz"
+	},
+	"amount": "0.02833",
+	"status": "pending",
+	"currency": "ETH",
+	"created_at": "2021-03-09 20:05:20",
+	"updated_at": "2021-03-09 20:05:20",
+	"fiat_amount": "47.86",
+	"created_at_ts": 1615320320,
+	"fiat_currency": "USD",
+	"updated_at_ts": 1615320320,
+	"id":"mercuryo_id",
+	"merchant_transaction_id":"merchant_transaction_id"
+	}
+       }
+	```
+| Parameter  | Description  | 
+| ------------- | -------------  |
+| `id` | unique ID of the current event |
+| `uuid4` | unique user ID |
+| `country_code` | code of users country |
+| `number` | last 4 numbers of card number |
+| `amount` | crypro amount |
+| `status` | transaction status |
+| `currency` | crypto currency |
+| `created_at` and `updated_at` | data of start and last update |
+|`fiat_currency` | fiat currency |
+| `created_at_ts` | timestamp of creation |
+| `fiat_currency` | code of fiat currency |
+| `updated_at_ts` | timestamp of last update |
+| `merchant_transaction_id` | merchant id |
 
-`id` &ndash; unique ID of the current event
+***
 
-`uuid4` &ndash; unique user ID
+### 3. Transaction status types 
 
-`country_code` &ndash; - code of users country
-
-`number` &ndash; last 4 numbers of card number
-
-`amount` &ndash; crypro amount
-
-`status` &ndash; transaction status
-
-`currency` &ndash; crypto currency
-
-`created_at` and `updated_at` &ndash; data of start and last update
-
-`fiat_currency` &ndash; fiat currency
-
-`created_at_ts` &ndash; timestamp of creation
-
-`fiat_currency` &ndash; code of fiat currency
-
-`updated_at_ts` &ndash; timestamp of last update
-
-`merchant_transaction_id` &ndash; merchant id
-
-
-# Transaction status types 
-
-## BUY
+#### 3.1. BUY
 Per 1 transaction there are two internal operations "buy" and "withdraw"
 
 **Type: `buy`**
 
-`new` &ndash; transaction initiated
-
-`pending` &ndash; waiting for any action from the user to continue the transaction (waiting for input 3ds or descriptor)
-
-`cancelled` &ndash; transaction cancelled (usually due to timeout of descriptor or 3ds)
-
-`paid` &ndash; transaction completed successfully (money debited from the card)
-
-`order_failed` &ndash; transaction was rejected by the issuer bank 
-
-`order_scheduled` &ndash; transaction is successful, the money is held up/frozen on the card by the bank, we are waiting for the client to pass KYC. As soon as the client passes KYC - crypto is sent to the address, if the client fails KYC - transaction is canceled within 1 hours, client’s bank returns money back to card.
-
-`descriptor_failed` &ndash; the user entered an invalid descriptor three times
+| Status  | Description  | 
+| ------------- | -------------  |
+| `new` | transaction initiated |
+| `pending` | waiting for any action from the user to continue the transaction (waiting for input 3ds or descriptor) |
+| `cancelled` | transaction cancelled (usually due to timeout of descriptor or 3ds) |
+| `paid` | transaction completed successfully (money debited from the card) |
+| `order_failed` | transaction was rejected by the issuer bank |
+| `order_scheduled` | transaction is successful, the money is held up/frozen on the card by the bank, we are waiting for the client to pass KYC. As soon as the client passes KYC - crypto is sent to the address, if the client fails KYC - transaction is canceled within 1 hours, client’s bank returns money back to card.|
+|`descriptor_failed` | the user entered an invalid descriptor three times |
 
 **Type: `withdraw`**
 
-`new` &ndash; transaction initiated
+| Status  | Description  | 
+| ------------- | -------------  |
+| `new` | transaction initiated |
+| `pending` | transaction in progress |
+| `failed` | not completed successfully (this is rare) |
+| `completed` | successfully (received transaction hash) |
 
-`pending` &ndash; transaction in progress
-
-`failed` &ndash; not completed successfully (this is rare)
-
-`completed` &ndash; successfully (received transaction hash)
-
-## SELL
+#### 3.2. SELL
 
 Per 1 transaction there are two internal operations "deposit" and "sell"
 
 **Type:** `deposit`
 
-`new` &ndash; new deposit
-
-`pending` &ndash; deposit in progress
-
-`succeeded` &ndash; deposit is done
-
-`faild` &ndash; something gone wrong
+| Status  | Description  | 
+| ------------- | -------------  |
+| `new` | new deposit |
+| `pending`| deposit in progress |
+| `succeeded` | deposit is done |
+| `faild` | something gone wrong |
 
 **Type:** `sell`
 
-`new` &ndash; transaction created
+| Status  | Description  | 
+| ------------- | -------------  |
+|`new` | transaction created |
+| `pending` | transaction in progress |
+| `succeeded` | successfully completed (money transferred to the card) |
+| `failed` | not completed successfully (crypto is refunded to `refund_address`) |
 
-`pending` &ndash; transaction in progress
+***
 
-`succeeded` &ndash; successfully completed (money transferred to the card)
-
-`failed` &ndash; not completed successfully (crypto is refunded to `refund_address`)
-
-## API METHODS 
+### 4. API METHODS 
 			
-**How to get rates.**
+**Get rates.**
 
 **rate+mercuryo fees+partners fee**
 
@@ -205,7 +226,7 @@ Request:
 [Example](https://api.mercuryo.io/v1.6/widget/rates/fee-off?widget_id=d9d9dab5-7127-417b-92fb-478bc90916b3)
 
 
-**How to get transaction status**
+**Get transaction status**
 
 Request:
 `https://api.mercuryo.io/v1.6/widget/transactions`
@@ -213,7 +234,7 @@ Request:
 [Example](https://api.mercuryo.io/v1.6/widget/transactions?widget_id=d9d9dab5-7127-417b-92fb-478bc90916b3&merchant_transaction_id=1234)
 
 
-**How to get final crypto *buy* or fiat *sell* amounts**
+**Get final crypto *buy* or fiat *sell* amounts**
 
 1. **buy** 
 
@@ -238,14 +259,14 @@ Request:
 [Example](https://api.mercuryo.io/v1.6/widget/buy/rate?from=USD&to=BTC&amount=100&widget_id=d9d9dab5-7127-417b-92fb-478bc90916b3)
 
 
-**How to get the list of supported fiat/cryptocurrencies**
+**Get the list of supported fiat/cryptocurrencies**
 
 1. `https://api.mercuryo.io/v1.6/public/currencies-buy`
 
 2. `https://api.mercuryo.io/v1.6/public/currencies-sell`	
 
 
-**How to get min/max limits**				
+**Get min/max limits**				
 
 1. **buy** 
  
@@ -263,12 +284,12 @@ Request:
 [Example:](https://api.mercuryo.io/v1.6/public/currency-limits?from=USD&to=BTC&widget_id=d9d9dab5-7127-417b-92fb-478bc90916b3&type=sell)	
 
 
-**How to get list of supported countries**
+**Get list of supported countries**
 
 `https://api.mercuryo.io/v1.6/public/card-countries` 
 
 
-# Signature Wallet Address
+### 5. Signature Wallet Address
 
 To protect against forgery of the crypto-wallet address, you have to use a signature.
 
@@ -291,14 +312,16 @@ Signature generation [example](https://abunchofutils.com/u/computing/sha512-hash
 
 ![img4](https://github.com/mercuryoio/api-migration-docs/blob/master/img4.png)
 
-# TEST (to use Mercuryo’s sandbox you should provide all your test personal/server ip’s for whitelist) 
+### 6. TEST
+
+You should provide all your test personal/server ip’s for whitelist to use Mercuryo’s sandbox
 
 How to use parameters
 
 1. [iframe](https://demo-widget.mercuryo.io)
 2. [redirect](https://widget.mercuryo.io/docs.html)		
 
-# SANDBOX 
+#### 6.1. SANDBOX 
 
 [Dashboard](https://sandbox-partners.mrcr.io) 
 
@@ -309,7 +332,8 @@ Redirect to [Sandbox](https://sandbox-exchange.mrcr.io)
 1. Place `<div id="mercuryo-widget"></div>` inside `<body></body>`
  
 2. Put 
-`<script src="https://sandbox-widget.mrcr.io/embed.2.0.js"></script>
+```
+<script src="https://sandbox-widget.mrcr.io/embed.2.0.js"></script>
 
 <script>mercuryoWidget.run({widgetId: 
 
@@ -317,18 +341,18 @@ da128a17-d019-41f4-b80c-a615d7e0f595
 
 host: document.getElementById('mercuryo-widget')})
 
-</script>`
+</script>
+```
 
  in the end of the page before `</body>`
  
 					
 test `widget_id=60b69ef8-9287-49d7-8164-94d87d8982c4` You can find how to get your own test widget in second paragraph 
-
-**phone** &ndash; you can use your own
-
-**email** &ndash; you can use your own
-
-**bank card** &ndash; you can use your own real visa/MasterCard bank cards for 3ds part (the fiat won't be charged and data won't be stored)
+| Parameter name  | Description  | 
+| ------------- | -------------  |
+| phone | Phine number. You can use your own |
+| email | E-mail adress. You can use your own |
+| bank card | Bank card number. You can use your own real visa/MasterCard bank cards for 3ds part (the fiat won't be charged and data won't be stored) |
 
 
 You can make your own test adresses in wallet. 
@@ -339,7 +363,7 @@ test BTC address &ndash; `msBE6aCaAesegu4VzbQW3L5xWBL8vi15Q7`
 
 test erc-20 address &ndash; `0xA14691F9f1F851bd0c20115Ec10B25FC174371DF`
 				
-# II How to get testnet transaction status
+#### 6.2. Get testnet transaction status
 1. On the partner side, create a unique ID (max size 255 characters).
 2. Set the generated ID in in the URL parameter `merchant_transaction_id`. 
 3. Call API method
@@ -350,20 +374,20 @@ test `widget_id` example &ndash; `60b69ef8-9287-49d7-8164-94d87d8982c4`
 
 `merchant_transaction_id` &ndash; generated unique id by partner that was created in the step 2
 
-# III How to get rates, limits etc
+#### 6.3. Get rates, limits etc
 
 
 [**Rates**](https://sandbox-api.mrcr.io/v1.5/public/rates?widget_id=60b69ef8-9287-49d7-8164-94d87d8982c4)
 
 
-**How to get the list of supported fiat/cryptocurrencies**	
+**Get the list of supported fiat/cryptocurrencies**	
 
 [Buy](https://sandbox-api.mrcr.io/v1.5/public/currencies-buy)
 
 [Sell](https://sandbox-api.mrcr.io/v1.5/public/currencies-sell)		
 
 
-**How to get min/max limits**	
+**Get min/max limits**	
 
 Request:
 
@@ -371,7 +395,7 @@ Request:
 
 [Example](https://sandbox-api.mrcr.io/v1.5/public/currency-limits?from=USD&to=BTC&widget_id=60b69ef8-9287-49d7-8164-94d87d8982c4)
 					
-**How to get list of supported countries**
+**Get list of supported countries**
 
 Request:
 
@@ -379,7 +403,7 @@ Request:
 
 [Example]()
 
-**How to get final crypto amount**
+**Get final crypto amount**
 
 Request:
 
@@ -388,7 +412,7 @@ Request:
 [Example](https://sandbox-api.mrcr.io/v1.5/public/convert?from=EUR&to=BTC&type=buy&amount=100&widget_id=60b69ef8-9287-49d7-8164-94d87d8982c4)
 
 	
-# IV Check test transaction 	
+#### 6.4. Check test transaction 	
 
 [**BTC**](https://tbtc.bitaps.com) testnet
 
