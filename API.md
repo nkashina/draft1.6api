@@ -59,28 +59,15 @@ https://api.mercuryo.io/v1.6/public/convert?from=EUR&to=BTC&type=buy&amount=100&
 | Parameter name  | Type  | 
 | ------------- | -------------  |
 | `id` | &ndash; unique ID of the current event |
-| ------------- | -------------  |
 | `uuid4` | &ndash; unique user ID |
-| ------------- | -------------  |
 | `country_code` | &ndash; - code of users country |
-| ------------- | -------------  |
 | `number` | &ndash; last 4 numbers of card number |
-| ------------- | -------------  |
 | `amount` | &ndash; crypro amount |
-| ------------- | -------------  |
 | `status` | &ndash; transaction status |
-| ------------- | -------------  |
 | `currency` | &ndash; crypto currency |
-| ------------- | -------------  |
 | `created_at` and `updated_at` | &ndash; data of start and last update |
-| ------------- | -------------  |
 |`fiat_currency` | &ndash; fiat currency |
-| ------------- | -------------  |
 | `created_at_ts` | &ndash; timestamp of creation |
-| ------------- | -------------  |
 | `fiat_currency` | &ndash; code of fiat currency |
-| ------------- | -------------  |
 | `updated_at_ts` | &ndash; timestamp of last update |
-| ------------- | -------------  |
 | `merchant_transaction_id` | &ndash; merchant id |
-| ------------- | -------------  |
