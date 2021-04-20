@@ -56,44 +56,30 @@ https://api.mercuryo.io/v1.6/public/convert?from=EUR&to=BTC&type=buy&amount=100&
 ![public/convert](https://github.com/IgnatBatuev/draft1.6api/blob/main/conver_comparev3.png)
 
 
-```js
-    "url": "https:\/\/webhook.site\/75f6bdf4-3b4c-463c-8a81-918523f765aa",
-    "payload": {
-        "data": {
-            "id": "06292dddc67051001",
-            "card": {
-                "number": "6447"
-            },
-            "type": "buy",
-            "user": {
-                "uuid4": "938252dc-5640-4a29-a4c3-14ce2e0bafda",
-                "country_code": "ru"
-            },
-```
+| Parameter name  | Type  | 
+| ------------- | -------------  |
+| `id` | &ndash; unique ID of the current event |
 
-```js scrypt
-import `https://api.mercuryo.io/v1.6/widget/transactions?widget_id=d9d9dab5-7127-417b-92fb-478bc90916b3&merchant_transaction_id=1234.js`;"
-```
-"data": {
-"tx": {
-"id": "blockchain_transaction_id",
-"address": "blockchain_address"
-},
-"type": "withdraw",
-"user":{
-"uuid4":"mercuryo_user_uuid4,
-"country_code":"nz"
-},
-"amount": "0.02833",
-"status": "pending",
-"currency": "ETH",
-"created_at": "2021-03-09 20:05:20",
-"updated_at": "2021-03-09 20:05:20",
-"fiat_amount": "47.86",
-"created_at_ts": 1615320320,
-"fiat_currency": "USD",
-"updated_at_ts": 1615320320,
-"id":"mercuryo_id",
-"merchant_transaction_id":"merchant_transaction_id"
-```
+| `uuid4` | &ndash; unique user ID |
 
+| `country_code` | &ndash; - code of users country |
+
+| `number` | &ndash; last 4 numbers of card number |
+
+| `amount` | &ndash; crypro amount |
+
+| `status` | &ndash; transaction status |
+
+| `currency` | &ndash; crypto currency |
+
+| `created_at` and `updated_at` | &ndash; data of start and last update |
+
+|`fiat_currency` | &ndash; fiat currency |
+
+| `created_at_ts` | &ndash; timestamp of creation |
+
+| `fiat_currency` | &ndash; code of fiat currency |
+
+| `updated_at_ts` | &ndash; timestamp of last update |
+
+| `merchant_transaction_id` | &ndash; merchant id |
