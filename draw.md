@@ -229,9 +229,36 @@ Per 1 transaction there are two internal operations "deposit" and "sell"
 ##### 4.1.1 rate+mercuryo fees+partners fee
 
 Request:
-`https://api.mercuryo.io/v1.6/public/rates`
+`GET https://api.mercuryo.io/v1.6/public/rates`
 
-[Example](https://api.mercuryo.io/v1.6/public/rates?widget_id=d9d9dab5-7127-417b-92fb-478bc90916b3)
+Response example:
+```js
+"status": 200,
+    "data": {
+        "buy": {
+            "ALGO": {
+                "ARS": "124.98297107",
+                "BRL": "7.42299956",
+                "CHF": "1.22559999",
+                "EUR": "1.10750000",
+                "GBP": "0.95730000",
+                "IDR": "19428.79347193",
+                "ILS": "4.36429999",
+                "JPY": "144.72785374",
+                "KES": "133.79984881",
+                "KRW": "1497.005988",
+                "MXN": "26.62299785",
+                "NGN": "549.28757402",
+                "NOK": "11.10899917",
+                "PLN": "5.07299996",
+                "RUB": "102.12793771",
+                "SEK": "11.27299889",
+                "TRY": "10.80869932",
+                "UAH": "37.75198981",
+                "USD": "1.33240000",
+                "ZAR": "19.03699822"
+            }, ...
+```
 
 
 ##### 4.1.2 rate+mercuryo fee
@@ -241,8 +268,22 @@ Request:
 
 [Example](https://api.mercuryo.io/v1.6/widget/rates/partner-fee-off?widget_id=d9d9dab5-7127-417b-92fb-478bc90916b3)
 
+```js
+"status": 200,
+    "data": {
+        "buy": {
+            "BTC": {
+                "EUR": "45999.85280047",
+                "RUB": "4271678.76975651",
+                "USD": "55253.19777882",
+                "JPY": "6071645.41590771",
+                "TRY": "449074.90569426",
+                "GBP": "40221.37846708",
+                "UAH": "1576044.12923561"
+            }, ... ```
+	 
 
-##### 4.1.3clear exchange rate**
+##### 4.1.3 clear exchange rate
 
 Request:
 `https://api.mercuryo.io/v1.6/widget/rates/fee-off`
@@ -250,7 +291,7 @@ Request:
 [Example](https://api.mercuryo.io/v1.6/widget/rates/fee-off?widget_id=d9d9dab5-7127-417b-92fb-478bc90916b3)
 
 
-**Get transaction status**
+#### 4.2. Get transaction status
 
 Request:
 `https://api.mercuryo.io/v1.6/widget/transactions`
@@ -258,9 +299,9 @@ Request:
 [Example](https://api.mercuryo.io/v1.6/widget/transactions?widget_id=d9d9dab5-7127-417b-92fb-478bc90916b3&merchant_transaction_id=1234)
 
 
-**Get final crypto *buy* or fiat *sell* amounts**
+#### 4.3. Get final crypto *buy* or fiat *sell* amounts**
 
-1. **buy** 
+##### 4.3.1. buy
 
 Request:
 `https://api.mercuryo.io/v1.6/public/convert`
@@ -268,7 +309,7 @@ Request:
 [Example](https://api.mercuryo.io/v1.6/public/convert?from=EUR&to=BTC&type=buy&amount=100&widget_id=d9d9dab5-7127-417b-92fb-478bc90916b3)
 
 
-2. **sell**
+##### 4.3.2. sell
 
 Request:
 `https://api.mercuryo.io/v1.6/public/convert`
@@ -276,23 +317,25 @@ Request:
 [Example](https://api.mercuryo.io/v1.6/public/convert?from=BTC&to=EUR&type=sell&amount=0.1&widget_id=d9d9dab5-7127-417b-92fb-478bc90916b3)
 
 
-3.
+##### 4.3.3. buy rate
 Request:
 `https://api.mercuryo.io/v1.6/widget/buy/rate`
 
 [Example](https://api.mercuryo.io/v1.6/widget/buy/rate?from=USD&to=BTC&amount=100&widget_id=d9d9dab5-7127-417b-92fb-478bc90916b3)
 
 
-**Get the list of supported fiat/cryptocurrencies**
+#### 4.4. Get the list of supported fiat/cryptocurrencies
 
-1. `https://api.mercuryo.io/v1.6/public/currencies-buy`
+1. Request:
+`https://api.mercuryo.io/v1.6/public/currencies-buy`
 
-2. `https://api.mercuryo.io/v1.6/public/currencies-sell`	
+2. Request:
+`https://api.mercuryo.io/v1.6/public/currencies-sell`	
 
 
-**Get min/max limits**				
+#### 4.5. Get min/max limits				
 
-1. **buy** 
+##### 4.5.1 buy 
  
 Request:
 `https://api.mercuryo.io/v1.6/public/currency-limits`
@@ -300,7 +343,7 @@ Request:
 [Example](https://api.mercuryo.io/v1.6/public/currency-limits?from=USD&to=BTC&widget_id=d9d9dab5-7127-417b-92fb-478bc90916b3&type=buy)
 
 
-2. **sell** 
+##### 4.5.2. sell 
 
 Request:
 `https://api.mercuryo.io/v1.6/public/currency-limits`
@@ -308,8 +351,10 @@ Request:
 [Example:](https://api.mercuryo.io/v1.6/public/currency-limits?from=USD&to=BTC&widget_id=d9d9dab5-7127-417b-92fb-478bc90916b3&type=sell)	
 
 
-**Get list of supported countries**
+#### 4.6. Get list of supported countries
 
+
+Request:
 `https://api.mercuryo.io/v1.6/public/card-countries` 
 
 ***
