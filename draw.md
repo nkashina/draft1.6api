@@ -224,13 +224,41 @@ Per 1 transaction there are two internal operations "deposit" and "sell"
 ***
 
 ### 4. API METHODS 
-			
-#### 4.1. Get rates.
 
-##### 4.1.1 rate+mercuryo fees+partners fee
+1. [Get rates](/draw.md####1-get-rates)
+
+   1.1. [rate+mercuryo fees+partners fee](//draw.md#####11-rate+mercuryo-fees+partners-fee)
+ 
+   1.2. [rate+mercuryo fee](//draw.md#####12-rate+mercuryo-fee)
+ 
+   1.3. [clear exchange rate](//draw.md#####13-clear-exchange-rate)
+ 
+2. [Get transaction status](/draw.md####2-get-transaction-status)
+3. [Get final crypto *buy* or fiat *sell* amounts ](/draw.md####3-get-final-crypto-buy-or-fiat-sell-amounts)
+
+   3.1 [buy](//draw.md#####31-buy)
+
+   3.2 [sell](//draw.md#####32-sell)
+4. [Get the list of supported fiat or crypto currencies](/draw.md####4-get-the-list-of-supported-fiat-or-crypto-currencies)
+5. [Get min/max limits](/draw.md####5-get-min/max-limits)
+
+   5.1 [buy](//draw.md#####51-buy)
+
+   5.2 [sell](//draw.md#####52-sell)
+  
+6. [Get list of supported countries](/draw.md####6-get-list-of-supported-countries)
+
+			
+#### 1. Get rates
+
+##### 1.1 rate+mercuryo fees+partners fee
 
 Request:
-`GET https://api.mercuryo.io/v1.6/public/rates`
+`GET https://api.mercuryo.io/v1.6/public/rates?widget_id=your_widget_id`
+
+| Params | Description  | 
+| ------------- | -------------  |
+| widget_id | your widget id |
 
 Response example:
 ```js
@@ -262,10 +290,14 @@ Response example:
 ```
 
 
-##### 4.1.2 rate+mercuryo fee
+##### 1.2 rate+mercuryo fee
 
 Request:
-`GET https://api.mercuryo.io/v1.6/widget/rates/partner-fee-off`
+`GET https://api.mercuryo.io/v1.6/widget/rates/partner-fee-off?widget_id=your_widget_id`
+
+| Params | Description  | 
+| ------------- | -------------  |
+| widget_id | your widget id |
 
 Response example:
 
@@ -284,10 +316,14 @@ Response example:
             }, ... 
 ```
 
-##### 4.1.3 clear exchange rate
+##### 1.3 clear exchange rate
 
 Request:
-`GET https://api.mercuryo.io/v1.6/widget/rates/fee-off`
+`GET https://api.mercuryo.io/v1.6/widget/rates/fee-off?widget_id=your_widget_id`
+
+| Params | Description  | 
+| ------------- | -------------  |
+| widget_id | your widget id |
 
 Response example:
 
@@ -305,24 +341,36 @@ Response example:
                 "UAH": "1563232.76535876"
             },
 ```
+***
 
-#### 4.2. Get transaction status
+#### 2. Get transaction status
 
 Request:
-`GET https://api.mercuryo.io/v1.6/widget/transactions`
-
-[Example](https://api.mercuryo.io/v1.6/widget/transactions?widget_id=d9d9dab5-7127-417b-92fb-478bc90916b3&merchant_transaction_id=1234)
+`GET https://api.mercuryo.io/v1.6/widget/transactions?widget_id=your_widget_id&merchant_transaction_id=your_id`
 
 | Params | Description  | 
 | ------------- | -------------  |
 | widget_id | your widget id |
 | merchant_transaction_id | current merchant transaction id |
-#### 4.3. Get final crypto *buy* or fiat *sell* amounts**
 
-##### 4.3.1. buy
+Response example:
+
+*** 
+
+#### 3. Get final crypto *buy* or fiat *sell* amounts
+
+##### 3.1. buy
 
 Request:
-`GET https://api.mercuryo.io/v1.6/public/convert`
+`GET https://api.mercuryo.io/v1.6/public/convert?from=fiat&to=crypto&type=buy&amount=fiat_ammount&widget_id=your_widget_id`
+
+| Params | Description  | 
+| ------------- | -------------  |
+| from | your fiat |
+| to | your crypto |
+| type | transaction type |
+| ammount | fiat ammount |
+| widget_id | your widget id |
 
 Response example:
 
@@ -342,18 +390,18 @@ Response example:
 }
 ```
 
+##### 3.2. sell
+
+Request:
+`GET https://api.mercuryo.io/v1.6/public/convert?from=crypto&to=fiat&type=sell&amount=crypto_ammount&widget_id=your_widget_id`
+
 | Params | Description  | 
 | ------------- | -------------  |
 | from | your fiat |
 | to | your crypto |
 | type | transaction type |
-| ammount | fiat ammount |
+| ammount | cpyrto ammount |
 | widget_id | your widget id |
-
-##### 4.3.2. sell
-
-Request:
-`GET https://api.mercuryo.io/v1.6/public/convert`
 
 Response example:
 
@@ -373,17 +421,16 @@ Response example:
 }
 ```
 
+##### 3.3. buy rate
+Request:
+`GET https://api.mercuryo.io/v1.6/widget/buy/rate?from=fiat&to=crypto&amount=fiat_ammount&widget_id=your_widget_id`
+
 | Params | Description  | 
 | ------------- | -------------  |
 | from | your fiat |
 | to | your crypto |
-| type | transaction type |
-| ammount | cpyrto ammount |
+| ammount | fiat ammount |
 | widget_id | your widget id |
-
-##### 4.3.3. buy rate
-Request:
-`GET https://api.mercuryo.io/v1.6/widget/buy/rate`
 
 Response example:
 
@@ -413,17 +460,11 @@ Response example:
     }
 }
 ```
+***
 
-| Params | Description  | 
-| ------------- | -------------  |
-| from | your fiat |
-| to | your crypto |
-| ammount | fiat ammount |
-| widget_id | your widget id |
+#### 4. Get the list of supported fiat or crypto currencies
 
-#### 4.4. Get the list of supported fiat or crypto currencies
-
-1. Buy 
+1. **Buy**
 Request:
 `GET https://api.mercuryo.io/v1.6/public/currencies-buy`
 
@@ -455,7 +496,7 @@ Pesponse example:
     ]
 }
 ```
-2. Sell
+2. **Sell**
 Request:
 `GET https://api.mercuryo.io/v1.6/public/currencies-sell`	
 
@@ -480,13 +521,21 @@ Response example:
     ]
 }
 ```
+***
 
-#### 4.5. Get min/max limits				
+#### 5. Get min/max limits				
 
-##### 4.5.1 buy 
+##### 5.1 buy 
  
 Request:
-`https://api.mercuryo.io/v1.6/public/currency-limits`
+`GET https://api.mercuryo.io/v1.6/public/currency-limits?from=fiat&to=crypto&widget_id=your_widget_id&type=buy`
+
+| Params | Description  | 
+| ------------- | -------------  |
+| from | fiat |
+| to | crypto |
+| widget_id | your widget id |
+| type | transaction type |
 
 Response example:
 ```js
@@ -506,17 +555,18 @@ Response example:
     }
 }
 ```
-| Params | Description  | 
-| ------------- | -------------  |
-| from | your fiat |
-| to | your crypto |
-| widget_id | your widget id |
-| type | transaction type |
 
-##### 4.5.2. sell 
+##### 5.2. sell 
 
 Request:
-`GET https://api.mercuryo.io/v1.6/public/currency-limits`
+`GET https://api.mercuryo.io/v1.6/public/currency-limits?from=fiat&to=crypto&widget_id=your_widget_id&type=sell`
+
+| Params | Description  | 
+| ------------- | -------------  |
+| from | fiat |
+| to | crypto |
+| widget_id | your widget id |
+| type | transaction type |
 
 Response example:
 ```js
@@ -536,8 +586,8 @@ Response example:
     }
 }
 ```
-
-#### 4.6. Get list of supported countries
+***
+#### 6. Get list of supported countries
 
 Request:
 `GET https://api.mercuryo.io/v1.6/public/card-countries` 
@@ -549,11 +599,12 @@ Response example:
     "data": [
         "alb",
         "asm",
-        "and",...
+        "and",
+	...
 ```
 
 ***
-
+***
 ### 5. Signature Wallet Address
 
 To protect against forgery of the crypto-wallet address, you have to use a signature.
