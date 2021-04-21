@@ -264,7 +264,7 @@ Response example:
 ##### 4.1.2 rate+mercuryo fee
 
 Request:
-`https://api.mercuryo.io/v1.6/widget/rates/partner-fee-off`
+`GET https://api.mercuryo.io/v1.6/widget/rates/partner-fee-off`
 
 Response example:
 
@@ -286,52 +286,199 @@ Response example:
 ##### 4.1.3 clear exchange rate
 
 Request:
-`https://api.mercuryo.io/v1.6/widget/rates/fee-off`
+`GET https://api.mercuryo.io/v1.6/widget/rates/fee-off`
 
-[Example](https://api.mercuryo.io/v1.6/widget/rates/fee-off?widget_id=d9d9dab5-7127-417b-92fb-478bc90916b3)
+Response example:
 
+```js
+"status": 200,
+    "data": {
+        "buy": {
+            "BTC": {
+                "EUR": "45999.85280047",
+                "RUB": "4240882.10347752",
+                "USD": "55261.44188154",
+                "JPY": "6006006.00600600",
+                "TRY": "448933.78226711",
+                "GBP": "39758.42779273",
+                "UAH": "1563232.76535876"
+            },
+```
 
 #### 4.2. Get transaction status
 
 Request:
-`https://api.mercuryo.io/v1.6/widget/transactions`
+`GET https://api.mercuryo.io/v1.6/widget/transactions`
 
 [Example](https://api.mercuryo.io/v1.6/widget/transactions?widget_id=d9d9dab5-7127-417b-92fb-478bc90916b3&merchant_transaction_id=1234)
 
-
+| Params | Description  | 
+| ------------- | -------------  |
+| widget_id | your widget id |
+| merchant_transaction_id | current merchant transaction id |
 #### 4.3. Get final crypto *buy* or fiat *sell* amounts**
 
 ##### 4.3.1. buy
 
 Request:
-`https://api.mercuryo.io/v1.6/public/convert`
+`GET https://api.mercuryo.io/v1.6/public/convert`
 
-[Example](https://api.mercuryo.io/v1.6/public/convert?from=EUR&to=BTC&type=buy&amount=100&widget_id=d9d9dab5-7127-417b-92fb-478bc90916b3)
+Response example:
 
+```js
+{
+    "status": 200,
+    "data": {
+        "type": "buy",
+        "currency": "BTC",
+        "amount": "0.00215648",
+        "fiat_currency": "EUR",
+        "fiat_amount": "100.00",
+        "rate": "46371.86",
+        "fee": "12.00",
+        "fee_currency": "EUR"
+    }
+}
+```
+
+| Params | Description  | 
+| ------------- | -------------  |
+| from | your fiat |
+| to | your crypto |
+| type | transaction type |
+| ammount | fiat ammount |
+| widget_id | your widget id |
 
 ##### 4.3.2. sell
 
 Request:
-`https://api.mercuryo.io/v1.6/public/convert`
+`GET https://api.mercuryo.io/v1.6/public/convert`
 
-[Example](https://api.mercuryo.io/v1.6/public/convert?from=BTC&to=EUR&type=sell&amount=0.1&widget_id=d9d9dab5-7127-417b-92fb-478bc90916b3)
+Response example:
 
+```js
+{
+    "status": 200,
+    "data": {
+        "type": "sell",
+        "currency": "BTC",
+        "amount": "0.10000000",
+        "fiat_currency": "EUR",
+        "fiat_amount": "4624.90",
+        "rate": "46248.89",
+        "fee": "132.53",
+        "fee_currency": "EUR"
+    }
+}
+```
+
+| Params | Description  | 
+| ------------- | -------------  |
+| from | your fiat |
+| to | your crypto |
+| type | transaction type |
+| ammount | cpyrto ammount |
+| widget_id | your widget id |
 
 ##### 4.3.3. buy rate
 Request:
-`https://api.mercuryo.io/v1.6/widget/buy/rate`
+`GET https://api.mercuryo.io/v1.6/widget/buy/rate`
 
-[Example](https://api.mercuryo.io/v1.6/widget/buy/rate?from=USD&to=BTC&amount=100&widget_id=d9d9dab5-7127-417b-92fb-478bc90916b3)
+Response example:
 
+```js
+{
+    "status": 200,
+    "data": {
+        "buy_token": "59d9bdb370427daed4deffdf2e94becdb7edc0848045cbbd65db08cf7b94068beyJ0IjoxNjE4OTgyNTU0LCJjIjoiQlRDIiwiYSI6IjAuMDAyNDM5MzAiLCJmYyI6IlVTRCIsImZhIjoiMTUwLjAwIiwiZiI6IjE0LjcyIiwic2YiOiIxNC43MjAwMDAwMDAwIiwidGYiOiIwIiwiciI6IjU1NDU4LjUwIiwiY2lkIjoiNjUwMWNjNGUxZDg3NDFlY2U2NmU4MGVkYmQyYjc2NzQiLCJ3IjoiMjU4NjVERjEtMzYyRC00MTFBLUI5QTEtRjBBQ0FDRjdFNzIwIn0=",
+        "currency": "BTC",
+        "amount": "0.00243930",
+        "fiat_amount": "150.00",
+        "fiat_currency": "USD",
+        "rate": "55458.50",
+        "fee": {
+            "BTC": "0.00026543",
+            "USD": "14.72"
+        },
+        "subtotal": {
+            "BTC": "0.00243930",
+            "USD": "135.28"
+        },
+        "total": {
+            "BTC": "0.00270473",
+            "USD": "150.00"
+        },
+        "kyc_limit_exceeded": false
+    }
+}
+```
 
-#### 4.4. Get the list of supported fiat/cryptocurrencies
+| Params | Description  | 
+| ------------- | -------------  |
+| from | your fiat |
+| to | your crypto |
+| ammount | fiat ammount |
+| widget_id | your widget id |
 
-1. Request:
-`https://api.mercuryo.io/v1.6/public/currencies-buy`
+#### 4.4. Get the list of supported fiat or crypto currencies
 
-2. Request:
-`https://api.mercuryo.io/v1.6/public/currencies-sell`	
+1. Buy 
+Request:
+`GET https://api.mercuryo.io/v1.6/public/currencies-buy`
 
+Pesponse example:
+```
+{
+    "status": 200,
+    "data": [
+        "EUR",
+        "USD",
+        "RUB",
+        "JPY",
+        "TRY",
+        "GBP",
+        "UAH",
+        "GHS",
+        "TZS",
+        "UGX",
+        "BTC",
+        "ETH",
+        "BAT",
+        "USDT",
+        "ALGO",
+        "TRX",
+        "OKB",
+        "BCH",
+        "DAI",
+        "EGLD"
+    ]
+}
+```
+2. Sell
+Request:
+`GET https://api.mercuryo.io/v1.6/public/currencies-sell`	
+
+Response example:
+```js
+{
+    "status": 200,
+    "data": [
+        "EUR",
+        "USD",
+        "RUB",
+        "BTC",
+        "ETH",
+        "BAT",
+        "USDT",
+        "ALGO",
+        "TRX",
+        "OKB",
+        "BCH",
+        "DAI",
+        "EGLD"
+    ]
+}
+```
 
 #### 4.5. Get min/max limits				
 
@@ -340,22 +487,69 @@ Request:
 Request:
 `https://api.mercuryo.io/v1.6/public/currency-limits`
 
-[Example](https://api.mercuryo.io/v1.6/public/currency-limits?from=USD&to=BTC&widget_id=d9d9dab5-7127-417b-92fb-478bc90916b3&type=buy)
-
+Response example:
+```js
+{
+    "status": 200,
+    "code": 0,
+    "message": "",
+    "data": {
+        "BTC": {
+            "max": "0.08317062",
+            "min": "0.002"
+        },
+        "USD": {
+            "max": "4856.4",
+            "min": "123.08"
+        }
+    }
+}
+```
+| Params | Description  | 
+| ------------- | -------------  |
+| from | your fiat |
+| to | your crypto |
+| widget_id | your widget id |
+| type | transaction type |
 
 ##### 4.5.2. sell 
 
 Request:
-`https://api.mercuryo.io/v1.6/public/currency-limits`
+`GET https://api.mercuryo.io/v1.6/public/currency-limits`
 
-[Example:](https://api.mercuryo.io/v1.6/public/currency-limits?from=USD&to=BTC&widget_id=d9d9dab5-7127-417b-92fb-478bc90916b3&type=sell)	
-
+Response example:
+```js
+{
+    "status": 200,
+    "code": 0,
+    "message": "",
+    "data": {
+        "BTC": {
+            "max": "0.05399633",
+            "min": "0.002"
+        },
+        "USD": {
+            "max": "3124.79",
+            "min": "111.19"
+        }
+    }
+}
+```
 
 #### 4.6. Get list of supported countries
 
-
 Request:
-`https://api.mercuryo.io/v1.6/public/card-countries` 
+`GET https://api.mercuryo.io/v1.6/public/card-countries` 
+
+Response example:
+```js
+{
+    "status": 200,
+    "data": [
+        "alb",
+        "asm",
+        "and",...
+```
 
 ***
 
