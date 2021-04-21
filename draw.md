@@ -266,10 +266,10 @@ Response example:
 Request:
 `https://api.mercuryo.io/v1.6/widget/rates/partner-fee-off`
 
-[Example](https://api.mercuryo.io/v1.6/widget/rates/partner-fee-off?widget_id=d9d9dab5-7127-417b-92fb-478bc90916b3)
+Response example:
 
 ```js
-"status": 200,
+{"status": 200,
     "data": {
         "buy": {
             "BTC": {
@@ -280,8 +280,8 @@ Request:
                 "TRY": "449074.90569426",
                 "GBP": "40221.37846708",
                 "UAH": "1576044.12923561"
-            }, ... ```
-	 
+            }, ... 
+```
 
 ##### 4.1.3 clear exchange rate
 
