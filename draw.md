@@ -645,6 +645,7 @@ How to use parameters
 Make a call:
 `mercuryoWidget.run({ widgetId: 'a8c1dead-ed5f-4740-b9ce-c4ea7721c93b', host: document.getElementById('mercuryo-widget') });`
 `widgetId` and `host` are minimal required parameters. Below is a complete list of parameters:
+
 | Parameters | Description  | 
 | ------------- | -------------  |
 | widgetId | widget Id (required) |
@@ -706,38 +707,38 @@ Example of the returned data:`{ amount: "0.01336", currency: "BTC", address: "04
 
 | Parameter | Description | Example |
 | ------------- | -------------  | -------------  |
-| widget_id | Widget Id (required) | 67710925-8b40-4767-846e-3b88db69f04d |
-| type	Type of the operation	buy or sell |
-| amount | Amount of cryptocurrency| 1.2 |
-| fix_amount | Prevent user from changing amount of cryptocurrency | true |
-| currency | Cryptocurrency ticker | BTC |
-| fix_currency | Prevent user from changing cryptocurrency | true |
-| fiat_amount | Amount of fiat currency	| 100 |
-| fix_fiat_amount | Prevent user from changing amount of fiat currency	| true |
-| fiat_currency	| Fiat currency ticker	| EUR
-| fix_fiat_currency	| Prevent user from changing fiat currency	| true |
-| currencies	| Array of available crypto currencies	| BTC,ETH |
-| fiat_currencies	| Array of available fiat currencies	| EUR,USD |
-| fiat_currency_default	| Default fiat currency value	| RUB |
-| rates_fee_off	| Display currency rates without fees	| true |
-| address	| Wallet address for the predefined currency or BTC by default |	a8c1dead-ed5f-4740-b9ce-c4ea7721c93b |
-| address_map	| Wallet address for the predefined currency or BTC by default	| %7B%22BTC%22%3A%22a8c1dead-ed5f-4740-b9ce-c4ea7721c93b%22%7D (urlencoded JSON {"BTC":"a8c1dead-ed5f-4740-b9ce-c4ea7721c93b"}) |
-| hide_address	| Do not show wallet address in user interface |	true |
-| refund_address	| Wallet address for the predefined currency or BTC by default. It is used for refund in sell	| a8c1dead-ed5f-4740-b9ce-c4ea7721c93b |
-| refund_address_map	| JSON object of wallets for refund in sell	| %7B%22BTC%22%3A%22a8c1dead-ed5f-4740-b9ce-c4ea7721c93b%22%7D (urlencoded JSON {"BTC":"a8c1dead-ed5f-4740-b9ce-c4ea7721c93b"}) |
-| signature	| Wallet address signature	| cf23df2207d99a74fbe169e3eba035e633b65d94 |
-| country_code	| Country code of user’s citizenship in ISO 3166-1 alpha-2 format |	ru |
-| phone |	Phone number	| 79998887766 |
-| first_name |	First name |	Ivan |
-| last_name | Last name	 | Ivanov |
-| birthdate	| Date of birth in dd.mm.yyyy or dd/mm/yyyy format |	01/01/1980 |
-| email	 | Email |	example@examplemail.com |
-| return_url	| Merchant’s URL to return to after transaction |	https://example.com |
-| merchant_transaction_id |	Merchant’s transaction id |	d523a528503b22d25 |
-| ref_code |	Code for referral program |	Yr89v |
-| lang	 |Default language for user interface in ISO 639-1 format |	ru |
-| theme |	Name of a custom CSS theme |	mercuryo |
-| share_token |	SumSub share token |	{token} |
+| `widget_id` | Widget Id (required) | `67710925-8b40-4767-846e-3b88db69f04d` |
+| `type`	| Type of the operation	 | `buy` or `sell` |
+| `amount` | Amount of cryptocurrency| `1.2` |
+| `fix_amount` | Prevent user from changing amount of cryptocurrency | `true` |
+| `currency` | Cryptocurrency ticker | `BTC` |
+| `fix_currency` | Prevent user from changing cryptocurrency | `true` |
+| `fiat_amount` | Amount of fiat currency	| `100` |
+| `fix_fiat_amount` | Prevent user from changing amount of fiat currency	| `true` |
+| `fiat_currency`	| Fiat currency ticker	| `EUR` |
+| `fix_fiat_currency`	| Prevent user from changing fiat currency	| `true` |
+| `currencies`	| Array of available crypto currencies	| `BTC`,`ETH` |
+| `fiat_currencies`	| Array of available fiat currencies	| `EUR`,`USD` |
+| `fiat_currency_default`	| Default fiat currency value	| `RUB` |
+| `rates_fee_off`	| Display currency rates without fees	| `true` |
+| `address`	| Wallet address for the predefined currency or BTC by default |	`a8c1dead-ed5f-4740-b9ce-c4ea7721c93b` |
+| `address_map`	| Wallet address for the predefined currency or BTC by default	| `%7B%22BTC%22%3A%22a8c1dead-ed5f-4740-b9ce-c4ea7721c93b%22%7D (urlencoded JSON {"BTC":"a8c1dead-ed5f-4740-b9ce-c4ea7721c93b"})` |
+| `hide_address`	| Do not show wallet address in user interface |	`true` |
+| `refund_address`	| Wallet address for the predefined currency or BTC by default. It is used for refund in sell	| `a8c1dead-ed5f-4740-b9ce-c4ea7721c93b` |
+| `refund_address_map`	| JSON object of wallets for refund in sell	| `%7B%22BTC%22%3A%22a8c1dead-ed5f-4740-b9ce-c4ea7721c93b%22%7D (urlencoded JSON {"BTC":"a8c1dead-ed5f-4740-b9ce-c4ea7721c93b"})` |
+| `signature`	| Wallet address signature	| `cf23df2207d99a74fbe169e3eba035e633b65d94` |
+| `country_code`	| Country code of user’s citizenship in ISO 3166-1 alpha-2 format |	`ru` |
+| `phone` |	Phone number	| `79998887766` |
+| `first_name` |	First name |	`Ivan` |
+| `last_name` | Last name	 | `Ivanov` |
+| `birthdate`	| Date of birth in dd.mm.yyyy or dd/mm/yyyy format |	`01/01/1980` |
+| `email`	 | Email |	example@examplemail.com |
+| `return_url`	| Merchant’s URL to return to after transaction |	`https://example.com` |
+| `merchant_transaction_id` |	Merchant’s transaction id |	`d523a528503b22d25` |
+| `ref_code` |	Code for referral program |	`Yr89v` |
+| `lang`	 |Default language for user interface in ISO 639-1 format |	`ru` |
+| `theme` |	Name of a custom CSS theme |	`mercuryo` |
+| `share_token` |	SumSub share token |	`{token}` |
 
 *** 
 
