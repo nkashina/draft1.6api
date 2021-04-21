@@ -87,6 +87,7 @@ The signature can be checked by generating a hash through HMAC algorithm sha256 
 In this case, the request body must not change.
 
 ***
+***
 
 ### 2. Webhooks	
 
