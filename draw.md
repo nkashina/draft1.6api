@@ -561,7 +561,7 @@ Response example:
 Request:
 `GET https://api.mercuryo.io/v1.6/public/currency-limits?from=fiat&to=crypto&widget_id=your_widget_id&type=sell`
 
-| Params | Description  | 
+| Parameters | Description  | 
 | ------------- | -------------  |
 | from | fiat |
 | to | crypto |
@@ -636,8 +636,110 @@ You should provide all your test personal/server ip’s for whitelist to use Mer
 
 How to use parameters
 
-1. [iframe](https://demo-widget.mercuryo.io)
-2. [redirect](https://widget.mercuryo.io/docs.html)		
+[**iframe**](https://demo-widget.mercuryo.io)
+
+**Getting started**
+
+1. Place `<div id="mercuryo-widget"></div>` inside `<body></body>`
+2. Put `<script src="https://widget.mercuryo.io/embed.2.0.js"></script>` in the end of the page before `</body>`
+Make a call:
+`mercuryoWidget.run({ widgetId: 'a8c1dead-ed5f-4740-b9ce-c4ea7721c93b', host: document.getElementById('mercuryo-widget') });`
+`widgetId` and `host` are minimal required parameters. Below is a complete list of parameters:
+| Parameters | Description  | 
+| ------------- | -------------  |
+| widgetId | widget Id (required) |
+| host | DOM element, container for the widget (required) |
+| width | width of widget’s iframe in CSS-compatible format |
+| height | height of widget’s iframe in CSS-compatible format |
+| type | fixed type of the operation. Possible values are 'buy' or 'sell'|
+| amount | amount of cryptocurrency |
+| fixAmount | prevent user from changing amount of cryptocurrency. Boolean |
+| currency | cryptocurrency ticker |
+| currencies | array of available cryptocurrencies |
+| fixCurrency | prevent user from changing cryptocurrency. Boolean |
+| fiatAmount | amount of fiat currency |
+| fixFiatAmount | prevent user from changing amount of fiat currency. Boolean |
+| fiatCurrency | fiat currency ticker |
+| fixFiatCurrency | prevent user from changing fiat currency. Boolean |
+| fiatCurrencies | array of available fiat currencies |
+| fiatCurrencyDefault | default fiat currency value |
+| ratesFeeOff | display currency rates without fees. Boolean |
+| address | wallet address for the predefined currency or BTC by default |
+| addressMap | JS object of wallets. Example: {BTC: '…', ETH: '…'} |
+| hideAddress | do not show wallet address in user interface. Boolean |
+| refundAddress | wallet address for the predefined currency or BTC by default. It is used for refund in sell |
+| refundAddressMap | JS object of wallets for refund in sell. Example: `{BTC: '…', ETH: '…'}` |
+| signature | wallet address signature |
+| countryCode – country code of user’s citizenship in ISO 3166-1 alpha-2 format. Example: 'ru' |
+| phone | phone number |
+| firstName | first name |
+| lastName | last name |
+| birthdate | date of birth in dd.mm.yyyy or dd/mm/yyyy format |
+| email | e-mail adress |
+| returnUrl | merchant’s URL to return to after transaction |
+| merchantTransactionId | merchant’s transaction id |
+| refCode | code for referral program |
+| face | photo of user’s face in base64 format |
+| passport | photo of user’s passport in base64 format |
+| idCardFront | photo of front side of user’s ID card in base64 format |
+| idCardBack | photo of back side of user’s ID card in base64 format |
+| lang | default language for user interface in ISO 639-1 format. Example: 'ru' |
+| theme | name of a custom CSS theme |
+| shareToken | SumSub share token |
+
+Callbacks:
+1. onStatusChange - triggered each time the status of the purchase changes.
+
+Example: `onStatusChange: data` => `console.log(data)`
+
+Example of the returned data:`{ amount: "0.01336", currency: "BTC", fiat_amount: "100", fiat_currency: "EUR", id: "03b22d25d523a5285", status: "paid" }`
+
+2 . onSellTransferEnabled - triggered during sell crypto scenario when user chooses sell flow variant and gets qr-code for money transferring.
+
+Example: `onSellTransferEnabled: data` => `console.log(data)`
+
+Example of the returned data:`{ amount: "0.01336", currency: "BTC", address: "04d3911f3b6de0843", id: "03b22d25d523a5285", flow_id: "payout" }`
+
+***
+
+[**redirect**](https://widget.mercuryo.io/docs.html)		
+
+| Parameter | Description | Example |
+| ------------- | -------------  | -------------  |
+| widget_id | Widget Id (required) | 67710925-8b40-4767-846e-3b88db69f04d |
+| type	Type of the operation	buy or sell |
+| amount | Amount of cryptocurrency| 1.2 |
+| fix_amount | Prevent user from changing amount of cryptocurrency | true |
+| currency | Cryptocurrency ticker | BTC |
+| fix_currency | Prevent user from changing cryptocurrency | true |
+| fiat_amount | Amount of fiat currency	| 100 |
+| fix_fiat_amount | Prevent user from changing amount of fiat currency	| true |
+| fiat_currency	| Fiat currency ticker	| EUR
+| fix_fiat_currency	| Prevent user from changing fiat currency	| true |
+| currencies	| Array of available crypto currencies	| BTC,ETH |
+| fiat_currencies	| Array of available fiat currencies	| EUR,USD |
+| fiat_currency_default	| Default fiat currency value	| RUB |
+| rates_fee_off	| Display currency rates without fees	| true |
+| address	| Wallet address for the predefined currency or BTC by default |	a8c1dead-ed5f-4740-b9ce-c4ea7721c93b |
+| address_map	| Wallet address for the predefined currency or BTC by default	| %7B%22BTC%22%3A%22a8c1dead-ed5f-4740-b9ce-c4ea7721c93b%22%7D (urlencoded JSON {"BTC":"a8c1dead-ed5f-4740-b9ce-c4ea7721c93b"}) |
+| hide_address	| Do not show wallet address in user interface |	true |
+| refund_address	| Wallet address for the predefined currency or BTC by default. It is used for refund in sell	| a8c1dead-ed5f-4740-b9ce-c4ea7721c93b |
+| refund_address_map	| JSON object of wallets for refund in sell	| %7B%22BTC%22%3A%22a8c1dead-ed5f-4740-b9ce-c4ea7721c93b%22%7D (urlencoded JSON {"BTC":"a8c1dead-ed5f-4740-b9ce-c4ea7721c93b"}) |
+| signature	| Wallet address signature	| cf23df2207d99a74fbe169e3eba035e633b65d94 |
+| country_code	| Country code of user’s citizenship in ISO 3166-1 alpha-2 format |	ru |
+| phone |	Phone number	| 79998887766 |
+| first_name |	First name |	Ivan |
+| last_name | Last name	 | Ivanov |
+| birthdate	| Date of birth in dd.mm.yyyy or dd/mm/yyyy format |	01/01/1980 |
+| email	 | Email |	example@examplemail.com |
+| return_url	| Merchant’s URL to return to after transaction |	https://example.com |
+| merchant_transaction_id |	Merchant’s transaction id |	d523a528503b22d25 |
+| ref_code |	Code for referral program |	Yr89v |
+| lang	 |Default language for user interface in ISO 639-1 format |	ru |
+| theme |	Name of a custom CSS theme |	mercuryo |
+| share_token |	SumSub share token |	{token} |
+
+*** 
 
 #### 6.1. Mercuryo SANDBOX 
 
