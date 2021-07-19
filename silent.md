@@ -50,8 +50,7 @@ Response example:
 
 `
 {
-
-    "status": 200,
+     "status": 200,
     
     "data": {
     
@@ -63,7 +62,6 @@ Response example:
         
         "code_length": 4
     }
-}
 `
 
 **NB: token lifetime is 1 hour.**
@@ -74,7 +72,6 @@ Response example:
 
 `
 {
-
     "name": "Not Found",
     
     "message": "Token not found or expired.",
@@ -83,7 +80,6 @@ Response example:
     
     "status": 404,
     
-    "type": "yii\\web\\NotFoundHttpException"
-    
+    "type": "yii\\web\\NotFoundHttpException"  
 }
 `
