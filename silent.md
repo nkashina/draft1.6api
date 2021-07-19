@@ -48,7 +48,8 @@ Request: `GET https://api.mercuryo.io/v1.6/token/get-data`
 
 Response example:
 
-`{
+`
+{
 
     "status": 200,
     
@@ -62,7 +63,8 @@ Response example:
         
         "code_length": 4
     }
-}`
+}
+`
 
 **NB: token lifetime is 1 hour.**
 
@@ -70,7 +72,8 @@ If token is unvalid or expired:
 
 Response example:
 
-`{
+`
+{
 
     "name": "Not Found",
     
@@ -82,4 +85,5 @@ Response example:
     
     "type": "yii\\web\\NotFoundHttpException"
     
-}`
+}
+`
