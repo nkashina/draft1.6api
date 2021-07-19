@@ -4,12 +4,12 @@ Silent login is an tool that makes login in Mercuryo easier for your users. You 
 
 ## 2. Acceptance: 
 
-1. You need to add to your Terms and Policy agreement to share user data with us.
-2. You need to make an agreement with Mercuryo that Mercuryo will use the data for registration and will use it to third parties
-3. You need to ask users to accept  the Mercurio term  in your interface
+1. You need to add to your Terms and Policy agreement to share user data with Mercuryo.
+2. You need to make an agreement with Mercuryo that Mercuryo will use the data for registration and will use it to third parties.
+3. You need to ask users to accept  the Mercurio term  in your interface.
 
 ## 3. API methods:
-There is two API methods: one for users that already have mercuryo account and one for new ones
+There is two API methods: one for users that already have mercuryo account and one for new ones.
 
 1. **Silent Login**
 
@@ -48,7 +48,6 @@ Request: `GET https://api.mercuryo.io/v1.6/token/get-data`
 
 Response example:
 
-`{
 
     "status": 200,
     
@@ -64,7 +63,6 @@ Response example:
         
     }
     
-}`
 
 **NB: token lifetime is 1 hour.**
 
@@ -72,7 +70,6 @@ If token is unvalid or expired:
 
 Response example:
 
-`{
 
     "name": "Not Found",
     
@@ -84,4 +81,4 @@ Response example:
     
     "type": "yii\\web\\NotFoundHttpException"  
     
-}`
+
