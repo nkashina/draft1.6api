@@ -61,7 +61,9 @@ Response example:
         "timeout": 24,
         
         "code_length": 4
+        
     }
+    
 }`
 
 **NB: token lifetime is 1 hour.**
@@ -71,6 +73,7 @@ If token is unvalid or expired:
 Response example:
 
 `{
+
     "name": "Not Found",
     
     "message": "Token not found or expired.",
