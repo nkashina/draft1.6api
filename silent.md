@@ -49,11 +49,17 @@ Request: `GET https://api.mercuryo.io/v1.6/token/get-data`
 Response example:
 
 `{
+
     "status": 200,
+    
     "data": {
+    
         "key": "5673a50719c7f17ca376b00dd62b039bfd2935200dd5880efbae5b49c3794227bG9naW4tdmVyaWZ5LXBob25lRZ6oBwVJVWSshXeKoL3fvMMKhLa7f8L7",
+        
         "next": "verify-phone",
+        
         "timeout": 24,
+        
         "code_length": 4
     }
 }`
@@ -65,9 +71,15 @@ If token is unvalid or expired:
 Response example:
 
 `{
+
     "name": "Not Found",
+    
     "message": "Token not found or expired.",
+    
     "code": 404000,
+    
     "status": 404,
+    
     "type": "yii\\web\\NotFoundHttpException"
+    
 }`
